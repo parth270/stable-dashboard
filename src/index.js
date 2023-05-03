@@ -10,6 +10,7 @@ import Loader from "./layouts/Loader";
 import StatisticsOnlyPage from "./routes/statistics-only";
 import SummarisedPage from "./routes/summarised";
 import NarratedPage from "./routes/narrated";
+import VideoDrivenPage from "./routes/video-driven";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +30,8 @@ const router = createBrowserRouter([
     element: <NarratedPage />,
   },
   {
-    path: "/summarised",
-    element: <SummarisedPage />,
+    path: "/video-driven",
+    element:<VideoDrivenPage/>
   },
 ]);
 
