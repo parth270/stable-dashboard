@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Close from "../close";
-import GlobeConnectionsExample from "../globe/GlobeConnections";
+import GlobeConnectionsExample from "../globe/globeContainer";
 import useWidth from "../../hooks/useWidth";
 import useHeight from "../../hooks/useHeigth";
 
 const StatisticsOnlyContainer = () => {
-  const width = useWidth();
-  const height = useHeight();
-  console.log(width,height);
+
 
   return (
     <>
@@ -16,7 +14,9 @@ const StatisticsOnlyContainer = () => {
         <h1 className="text-center text-[#fff] text-[28px] mt-[50px]  font-semibold">
           Statistics Only
         </h1>
-        <GlobeConnectionsExample width={1000} vr={false} height={height-200} />
+        <GlobeConnectionsExample
+          vr={false}
+        />
       </div>
     </>
   );
