@@ -76,9 +76,12 @@ const Loader = ({ children }) => {
           className="fixed w-full h-[100vh] bg-[#26353C]  top-0 left-0 flex justify-center items-center"
           style={{
             zIndex: 100000000000000,
+            backgroundImage: "url('/021.png')",
+            backgroundColor: "#fff",
+            // backgroundSize: "cover",
           }}
         >
-          <img className="w-[300px]  " ref={ref1} src="/logo-1.png" />
+          <img className="w-[10%]  " ref={ref1} src="/front.png" />
           {/* <img className="w-[30px] " ref={ref2} src="/i.svg" />
           <img className="w-[30px] " ref={ref3} src="/b2.svg" />
           <img className="w-[30px] " ref={ref4} src="/l.svg" />

@@ -9,18 +9,19 @@ const HomeLayout = ({ children }) => {
           zIndex: 10,
         }}
       >
+        <img src="/front.png" className="w-[90px] absolute top-[28px] left-[50px]" alt="" />
         {children}
       </div>
       <div
-        className="w-[100%] h-[100vh] absolute"
+        className="w-[100%] h-[100vh] absolute bg-[#26353C]"
         style={{
           zIndex: 1,
           backgroundImage: "url('/021.png')",
           backgroundColor: "#fff",
-          backgroundSize: "cover",
+          // backgroundSize: "cover",
         }}
       >
-        <div className="w-[100%] h-[100vh] bg-[#26353C]  opacity-90"></div>
+        <div className="w-[100%] h-[100vh] bg-[#26353C]  opacity-0"></div>
       </div>
     </div>
   );
