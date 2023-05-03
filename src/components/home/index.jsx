@@ -39,7 +39,7 @@ const HomeContainer = () => {
         <Item title="Video Driven" route="video-driven" />
         <Item title="Avatars" route="avatars" />
         <Item title="Immersive Experience" route="immersive-experience" />
-        <Item title="Combination" route="Combination" />
+        <Item title="Combination" route="combination" />
       </div>
     </div>
   );

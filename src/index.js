@@ -8,6 +8,8 @@ import HomePage from "./routes";
 import AiQuerryPage from "./routes/ai-querry";
 import Loader from "./layouts/Loader";
 import StatisticsOnlyPage from "./routes/statistics-only";
+import SummarisedPage from "./routes/summarised";
+import NarratedPage from "./routes/narrated";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
   {
     path: "/statistics-only",
     element: <StatisticsOnlyPage />,
+  },
+  {
+    path: "/summarised",
+    element: <SummarisedPage />,
+  },
+  {
+    path: "/narrated",
+    element: <NarratedPage />,
   },
 ]);
 
