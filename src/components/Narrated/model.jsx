@@ -20,7 +20,6 @@ const Model = () => {
  Treasury yields could rise as Japan repatriates capital back home, with
  potentially negative knock-on effects on US stocks too. `,
   ];
-  const state = useSelector((state) => state.model);
   return (
     <>
       <div
@@ -39,9 +38,9 @@ const Model = () => {
           ease={Power4.easeInOut}
           duration={0.7}
         >
-          <div className="w-[100%] h-[100%] backdrop-blur-xl px-[50px] flex justify-between items-center bg-[#ffffff99]">
-            <div className="w-[60%] flex flex-col justify-center ">
-              <h1 className="text-[#000] border-l-[8px] border-[#0d383f] pl-[30px] font-medium text-[35px] mb-[10px]">
+          <div className="w-[100%] h-[100%] pl-[100px] flex justify-between items-center ">
+            <div className="w-[55%] py-[25px] rounded-3xl h-[550px] backdrop-blur-xl bg-[#00000060] flex flex-col justify-center px-[40px]">
+              <h1 className="text-[#fff]  font-medium text-[35px] mb-[10px]">
                 {title}:
               </h1>
               <div className="w-[100%] overflow-y-auto scroll-bar-cool h-[400px] pr-[50px]">
@@ -49,7 +48,7 @@ const Model = () => {
                   return (
                     <p
                       key={i}
-                      className="text-[#000] text-[18px] mt-[10px] font-medium"
+                      className="text-[#fff] text-[18px] mt-[10px] font-medium"
                     >
                       {item}
                     </p>
@@ -57,9 +56,9 @@ const Model = () => {
                 })}
               </div>
             </div>
-            <div className="w-[40%] h-[400px] ">
+            {/* <div className="w-[40%] h-[400px] ">
               <Chart />
-            </div>
+            </div> */}
           </div>
         </Tween>
       </div>

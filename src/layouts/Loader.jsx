@@ -75,7 +75,7 @@ const Loader = ({ children }) => {
         <div
           className="fixed w-full h-[100vh] bg-[#26353C]  top-0 left-0 flex justify-center items-center"
           style={{
-            zIndex: 100000000000000,
+            zIndex:99999999999999,
             backgroundImage: "url('/021.png')",
             backgroundColor: "#fff",
             // backgroundSize: "cover",

@@ -49,29 +49,31 @@ const HomeContainer = () => {
           icon="/stats.png"
           width={40}
         />
-        <Item
-          title="Summarised"
-          route="summarised"
-          icon="/mic.png"
-          width={40}
-        />
-        <Item title="Narrated" route="narrated" icon="/play.png" width={40} />
+        <Item title="Narrated" route="narrated" icon="/mic.png" width={40} />
         <Item
           title="Video Driven"
           route="video-driven"
-          icon="/woman.png"
-          width={24}
+          icon="/play.png"
+          width={40}
         />
-        <Item title="Avatars" route="avatars" icon="/web.png" width={50} />
+        <Item title="Avatars" route="avatars" icon="/woman.png" width={24} />
         <Item
           title="Immersive Experience"
           route="immersive-experience"
           icon="/web.png"
+          width={50}
         />
         <Item
-          title="Combination"
-          route="combination"
-          icon="/mic.png"
+          title="Turnkey Solutions"
+          route="turnkey-solutions"
+          icon="/key.png"
+          width={50}
+
+        />
+        <Item
+          title="On-Chain Solutions"
+          route="on-chain-solutions"
+          icon="/feather.png"
           width={40}
         />
       </div>

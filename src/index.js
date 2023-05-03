@@ -25,12 +25,12 @@ const router = createBrowserRouter([
     element: <StatisticsOnlyPage />,
   },
   {
-    path: "/summarised",
-    element: <SummarisedPage />,
-  },
-  {
     path: "/narrated",
     element: <NarratedPage />,
+  },
+  {
+    path: "/summarised",
+    element: <SummarisedPage />,
   },
 ]);
 

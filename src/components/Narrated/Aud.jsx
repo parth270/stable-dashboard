@@ -5,7 +5,7 @@ const Aud = () => {
   const ref = useRef();
   const [src, setSrc] = useState("/eng.mp3");
   const [srcId, setSrcId] = useState(0);
-  const opt = ["eng", "jap", "portugese"];
+  const opt = ["English", "Japanese", "portugese"];
   React.useEffect(() => {
     console.log(ref.current);
     if (ref.current) {
@@ -41,7 +41,7 @@ const Aud = () => {
   });
   return (
     <div
-      className="w-[340px] flex items-center justify-between absolute top-[20px] right-[20px]"
+      className="w-[340px] flex items-center justify-between absolute bottom-[30px] left-[160px]"
       style={{
         zIndex: 10000000000,
       }}
@@ -66,21 +66,21 @@ const Aud = () => {
         style={{
           zIndex: 9999999999999,
         }}
-        className="w-[140px] cursor-pointer relative h-[34px] relative translate-y-[8px] rounded-sm bg-[#00000017] flex items-center justify-center font-medium text-[14px] text-[#fff]  right-0 "
+        className="w-[140px] border-[1px] border-[#000] cursor-pointer relative h-[40px] rounded-3xl relative translate-y-[8px] rounded-sm bg-[#00000017] flex items-center justify-center font-medium text-[14px] text-[#fff]  right-0 "
       >
-        <p className="cursor-pointer uppercase translate-x-[-3px] text-[14px] tracking-wide">
+        <p className="cursor-pointer font-medium capitalize translate-x-[-3px] text-[18px] text-[#000] font-medium tracking-wide">
           {opt[srcId]}
         </p>
         <img
-          src="/down.svg"
+          src="/down (2).svg"
           className={` ${
-            clicked ? "rotate-180" : ""
+            !clicked ? "rotate-180" : ""
           } absolute right-[13px] w-[10px] translate-y-[1px]`}
           alt=""
         />
         {clicked && (
           <div
-            className="w-[100%] min-h-[34px] py-[5px] px-[5px] bg-[#222] rounded-sm absolute top-[38px]"
+            className="w-[100%] min-h-[34px] py-[5px] px-[5px] bg-[#d55432] rounded-3xl border-[1px] border-[#000]  rounded-sm absolute bottom-[45px]"
             style={{
               zIndex: 1000000000000,
             }}
@@ -90,27 +90,27 @@ const Aud = () => {
                 setSrcId(0);
                 setSrc("/eng.mp3");
               }}
-              className="w-[100%] h-[34px] bg-[#333] cursor-pointer uppercase text-[12px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
+              className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
             >
-              eng
+              {opt[0]}
             </div>
             <div
               onClick={() => {
                 setSrcId(1);
                 setSrc("/jap.mp3");
               }}
-              className="w-[100%] h-[34px] bg-[#333] cursor-pointer uppercase text-[12px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
+              className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
             >
-              jap
+              {opt[1]}
             </div>
             <div
               onClick={() => {
                 setSrcId(2);
                 setSrc("/eng1.mp3");
               }}
-              className="w-[100%] h-[34px] bg-[#333] cursor-pointer uppercase text-[12px] tracking-wide rounded-sm flex items-center justify-center "
+              className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
             >
-              portugese
+              {opt[2]}
             </div>
           </div>
         )}
