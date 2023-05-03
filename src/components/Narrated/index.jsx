@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Close from "../close";
+import Model from "./model";
+import Aud from "./Aud";
 
 const NarratedContainer = () => {
   return (
@@ -9,6 +11,8 @@ const NarratedContainer = () => {
         <h1 className="text-center text-[#fff] text-[28px] mt-[50px]  font-semibold">
           Narrated
         </h1>
+        <Aud />
+        <Model />
       </div>
     </>
   );

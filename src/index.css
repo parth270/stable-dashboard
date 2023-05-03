@@ -19,3 +19,24 @@ code {
 .pers div div {
   display: none;
 }
+.scroll-bar-cool::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: #f8f8f8 !important;
+  border-radius: 12px !important;
+}
+
+.scroll-bar-cool::-webkit-scrollbar-thumb {
+  background-color: #0d383f !important;
+  border-radius: 12px !important;
+}
+
+body::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: #f8f8f8 !important;
+  border-radius: 12px !important;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #0d383f !important;
+  border-radius: 12px !important;
+}
