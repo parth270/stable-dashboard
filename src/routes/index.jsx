@@ -1,9 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
+import Loader from "../utils/loader";
 
 const Home = React.lazy(() => import("../views/index"));
 
 const HomePage = () => {
-  return <Home />;
+  return (
+    <Suspense fallback={<Loader />}>
+      <Home />
+    </Suspense>
+  );
 };
 
 export default HomePage;

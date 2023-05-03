@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./services/store";
 import HomePage from "./routes";
+import Loader from "./layouts/Loader";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <RouterProvider router={router} />
+    <Loader>
+      <RouterProvider router={router} />
+    </Loader>
   </Provider>
 );
