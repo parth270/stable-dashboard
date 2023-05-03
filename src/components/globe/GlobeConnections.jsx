@@ -19,12 +19,12 @@ class GlobeConnectionsExample extends React.Component {
       stickToHand: true,
     };
 
-    this.refs = Object.create(null);
+    this.refs = {};
     this._onFacadeRef = this._onFacadeRef.bind(this);
   }
 
   _onFacadeRef(name, facade) {
-    // this.refs[name] = facade;
+    this.refs[name] = facade;
   }
 
   render() {

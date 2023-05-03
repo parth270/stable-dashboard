@@ -9,6 +9,9 @@ const Close = () => {
   return (
     <div
       className="cursor-pointer w-[20px] h-[20px] absolute top-[30px] left-[40px]"
+      style={{
+        zIndex:10000000
+      }}
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
