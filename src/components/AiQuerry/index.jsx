@@ -5,7 +5,6 @@ const AiQuerryContainer = () => {
   const ref = useRef();
 
   React.useEffect(() => {
-    console.log(ref.current.children[0]);
     const doc = document.getElementsByClassName("Home_main__nLjiQ");
     console.log(doc);
   });
@@ -13,10 +12,11 @@ const AiQuerryContainer = () => {
     <>
       <div className="w-[100%] h-[100vh] relative overflow-hidden flex flex-col items-center">
         <Close />
-        <h1 className="text-center text-[#fff] text-[28px] mt-[50px]  font-semibold"
-        style={{
-          zIndex:1000000000
-        }}
+        <h1
+          className="text-center text-[#fff] text-[28px] mt-[50px]  font-semibold"
+          style={{
+            zIndex: 1000000000,
+          }}
         >
           Ai Query
         </h1>
