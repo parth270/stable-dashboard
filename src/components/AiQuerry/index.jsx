@@ -12,12 +12,7 @@ const AiQuerryContainer = () => {
     <>
       <div className="w-[100%] h-[100vh] relative overflow-hidden flex flex-col items-center">
         <Close />
-        <h1
-          className="text-center text-[#fff] text-[28px] mt-[50px]  font-semibold"
-          style={{
-            zIndex: 1000000000,
-          }}
-        >
+        <h1 className="text-center text-[#fff] text-[28px] mt-[50px]  font-semibold">
           Ai Query
         </h1>
         <iframe
@@ -26,6 +21,12 @@ const AiQuerryContainer = () => {
           className="w-[100%] h-[100vh] absolute top-0 left-0"
           frameborder="0"
         ></iframe>
+        <div
+          className="w-[100%] h-[50px] bg-[#19376d]  absolute bottom-0"
+          style={{
+            zIndex: 1000000000000,
+          }}
+        ></div>
       </div>
     </>
   );

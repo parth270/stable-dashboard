@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Close from "../close";
-import GlobeConnectionsExample from "../globe/GlobeConnections";
+import GlobeConnectionsExample from "../globe/globeContainer";
 import useWidth from "../../hooks/useWidth";
 import useHeight from "../../hooks/useHeigth";
 
