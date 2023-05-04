@@ -61,15 +61,15 @@ const ImmersiveContainer = () => {
             src="/harvard.mp4"
             route="https://threejs-template-blush.vercel.app/"
           />
-          <Video src="/hfs.mp4" route="" />
+          <Video src="/hfs.mp4" route="https://hfs-meme.vercel.app/" />
           <Video
             src="/bca.mp4"
             route="https://euromoney-demo-ir7q.vercel.app/"
           />
         </div>
         <div className="w-[100%] h-[270px] flex items-center justify-center">
-          <Video src="/epg.mp4" route="" />
-          <Video src="/kubota.mp4" route="" />
+          <Video src="/epg.mp4" route="https://epg-report.web.app/" />
+          <Video src="/kubota.mp4" route="https://www.kubota.com/futurecube/" />
         </div>
       </div>
     </>

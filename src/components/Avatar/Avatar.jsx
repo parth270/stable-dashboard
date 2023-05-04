@@ -34,7 +34,7 @@ const Avatars = () => {
   return (
     <>
       <video
-        className="w-[400px] absolute bottom-0 cursor-pointer right-0 cursor-pointer "
+        className="w-[600px]  absolute bottom-0 cursor-pointer right-[-130px] cursor-pointer "
         autoPlay
         style={{
           zIndex: 99999999,
