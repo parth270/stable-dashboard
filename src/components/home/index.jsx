@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { redirect, useNavigate, useNavigation } from "react-router-dom";
 import { setLoading } from "../../services/Model";
 import { useDispatch } from "react-redux";
 
@@ -13,7 +13,9 @@ const Item = ({ title, route, icon, width, height }) => {
         onClick={() => {
           dispatch(setLoading(true));
           setTimeout(() => {
-            router(route);
+            router(route, {
+              replace: true,
+            });
             dispatch(setLoading(false));
           }, 1700);
         }}
@@ -45,7 +47,7 @@ const HomeContainer = () => {
         <Item title="Ai Query" route="ai-querry" icon="/brain.png" width={50} />
         <Item
           title="Statistics Only"
-          route="statistics-only"
+          route="/statistics-only"
           icon="/stats.png"
           width={40}
         />
@@ -68,7 +70,6 @@ const HomeContainer = () => {
           route="turnkey-solutions"
           icon="/key.png"
           width={50}
-
         />
         <Item
           title="On-Chain Solutions"

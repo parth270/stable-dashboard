@@ -18,7 +18,7 @@ import IntroPage from "./routes/Intro";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <IntroPage/>,
+    element: <IntroPage />,
   },
   {
     path: "/home",
