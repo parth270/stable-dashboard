@@ -13,10 +13,15 @@ import NarratedPage from "./routes/narrated";
 import VideoDrivenPage from "./routes/video-driven";
 import AvatarsPage from "./routes/avatars";
 import ImmersiveExperiencePage from "./routes/immersive-experience";
+import IntroPage from "./routes/Intro";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <IntroPage/>,
+  },
+  {
+    path: "/home",
     element: <HomePage />,
   },
   {

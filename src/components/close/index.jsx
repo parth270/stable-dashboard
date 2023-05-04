@@ -15,7 +15,7 @@ const Close = () => {
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
-          router("/");
+          router("/home");
           dispatch(setLoading(false));
         }, 1700);
       }}
