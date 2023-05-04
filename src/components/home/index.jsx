@@ -44,36 +44,36 @@ const HomeContainer = () => {
         How would you like to experience your report?
       </h1>
       <div className=" h-[400px] w-[800px] grid grid-rows-2 grid-cols-4 mt-[94px] gap-x-[30px] gap-y-[20px]">
-        <Item title="Ai Query" route="ai-querry" icon="/brain.png" width={50} />
+        <Item title="Ai Query" route="/ai-querry" icon="/brain.png" width={50} />
         <Item
           title="Statistics Only"
           route="/statistics-only"
           icon="/stats.png"
           width={40}
         />
-        <Item title="Narrated" route="narrated" icon="/mic.png" width={40} />
+        <Item title="Narrated" route="/narrated" icon="/mic.png" width={40} />
         <Item
           title="Video Driven"
-          route="video-driven"
+          route="/video-driven"
           icon="/play.png"
           width={40}
         />
-        <Item title="Avatars" route="avatars" icon="/woman.png" width={24} />
+        <Item title="Avatars" route="/avatars" icon="/woman.png" width={24} />
         <Item
           title="Immersive Experience"
-          route="immersive-experience"
+          route="/immersive-experience"
           icon="/web.png"
           width={50}
         />
         <Item
           title="Turnkey Solutions"
-          route="turnkey-solutions"
+          route="/turnkey-solutions"
           icon="/key.png"
           width={50}
         />
         <Item
           title="On-Chain Solutions"
-          route="on-chain-solutions"
+          route="/on-chain-solutions"
           icon="/feather.png"
           width={40}
         />

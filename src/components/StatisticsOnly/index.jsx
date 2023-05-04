@@ -11,10 +11,6 @@ const StatisticsOnlyContainer = () => {
       <div className="w-[100%] h-[100vh] relative overflow-x-hidden overflow-y-scroll flex scroll-bar-cool flex-col items-center">
         <Close />
 
-        {/* <GlobeConnectionsExample
-          vr={false}
-        /> */}
-
         {/* <iframe
           src="https://troika-examples.netlify.app/#globeConnections"
           className="w-[100%] h-[100vh] "
@@ -61,9 +57,19 @@ const StatisticsOnlyContainer = () => {
         </h1>
         <img
           src="11.gif"
-          className="w-[80%] h-[600px]  object-contain bg-[#000] shrink-0 mb-[100px]"
+          className="w-[60%] h-[600px]  bg-[#000] shrink-0 mb-[100px]"
+          style={{
+            objectFit: "contain",
+          }}
           alt=""
         />
+        <h1 className="text-center text-[#fff] text-[28px] mb-[-20px] mt-[0px] font-semibold">
+          Marvelous Reports
+        </h1>
+        <GlobeConnectionsExample vr={false} />
+        <div className="w-[100%] h-[100px] shrink-0">
+
+        </div>
         {/* <iframe
           src="https://flo.uri.sh/visualisation/13639521/embed"
           title="Interactive or visual content"

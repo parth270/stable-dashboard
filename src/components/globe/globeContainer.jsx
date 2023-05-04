@@ -40,7 +40,7 @@ const GlobeConnectionsExample = (props) => {
   return (
     <div
       //   onMouseMove={_onMouseMove}
-      className="flex flex-col items-center mt-[30px] pers"
+      className="flex flex-col items-center  pers"
     >
       <Canvas3D
         antialias
