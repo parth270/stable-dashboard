@@ -13,7 +13,7 @@ const Left = ({ id, color }) => {
         dispatch(setLoading(true));
         setTimeout(() => {
           router(
-            id === 1 ? "/intro" : id === 0 ? "/" : `/walkthrough/${id - 1}`
+            id === 1 ? "/intro" : id === 0 ? "/" : id===3? `/walkthrough/1`:`/walkthrough/${id - 1}`
           );
           dispatch(setLoading(false));
         }, 1700);

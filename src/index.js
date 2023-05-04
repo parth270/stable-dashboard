@@ -36,10 +36,10 @@ const router = createBrowserRouter([
     path: "/walkthrough/1",
     element: <Walk1 />,
   },
-  {
-    path: "/walkthrough/2",
-    element: <Walk2 />,
-  },
+  // {
+  //   path: "/walkthrough/2",
+  //   element: <Walk2 />,
+  // },
   {
     path: "/walkthrough/3",
     element: <Walk3 />,

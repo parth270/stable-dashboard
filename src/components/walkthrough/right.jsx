@@ -11,7 +11,7 @@ const Right = ({id,color}) => {
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
-          router(id === 7 ? "/home" : `/walkthrough/${id+1}`);
+          router(id === 7 ? "/home" :id===1? `/walkthrough/3`: `/walkthrough/${id+1}`);
           dispatch(setLoading(false));
         }, 1700);
       }}
