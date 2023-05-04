@@ -21,8 +21,8 @@ const Video = ({ src, route }) => {
   const [play, setPlay] = useState(true);
   console.log(play);
   return (
-    <Suspense fallback={null}>
-      <a href={route} target="_blank">
+    <a href={route} target="_blank">
+      <Suspense fallback={null}>
         <video
           className="w-[400px] mr-[40px]  cursor-pointer cursor-pointer "
           autoPlay
@@ -47,8 +47,8 @@ const Video = ({ src, route }) => {
           muted={true}
           ref={videoEl}
         ></video>
-      </a>
-    </Suspense>
+      </Suspense>
+    </a>
   );
 };
 

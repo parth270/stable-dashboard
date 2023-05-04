@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Loader from "../utils/loader";
 
 const Walk5Container = React.lazy(() => import("../views/walk5"));

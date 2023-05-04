@@ -16,9 +16,9 @@ const VideoDrivenContainer = () => {
   }, []);
   const [play, setPlay] = useState(true);
   return (
-    <Suspense fallback={null}>
-      <div className="w-[100%] h-[100vh] p-[40px] relative overflow-hidden justify-center flex-col items-center">
-        <Close />
+    <div className="w-[100%] h-[100vh] p-[40px] relative overflow-hidden justify-center flex-col items-center">
+      <Close />
+      <Suspense fallback={null}>
         <video
           className="w-[100%] h-[100%] cursor-pointer "
           autoPlay
@@ -40,8 +40,8 @@ const VideoDrivenContainer = () => {
           src={"/bgWeb.mp4"}
           ref={videoEl}
         ></video>
-      </div>
-    </Suspense>
+      </Suspense>
+    </div>
   );
 };
 
