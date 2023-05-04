@@ -17,6 +17,7 @@ class GlobeConnectionsExample extends React.Component {
     super(props);
     this.state = {
       stickToHand: true,
+      
     };
 
     this.refs = {};
@@ -24,7 +25,8 @@ class GlobeConnectionsExample extends React.Component {
   }
 
   _onFacadeRef(name, facade) {
-    this.refs[name] = facade;
+    console.log(name,facade)
+    // this.refs[name] = facade;
   }
 
   render() {

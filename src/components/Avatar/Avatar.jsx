@@ -14,9 +14,9 @@ const Avatars = () => {
     attemptPlay();
   }, []);
   const [play, setPlay] = useState(true);
-  const [src, setSrc] = useState("/avatar-2.webm");
+  const [src, setSrc] = useState("/avatar-eng.webm");
   const [srcId, setSrcId] = useState(0);
-  const opt = ["Jane", "Japanese", "portugese", "eng"];
+  const opt = ["Jane", "Japanese", "portugese", "swedish"];
   const [clicked, setClicked] = useState(false);
   const [hover, setHover] = useState(false);
   React.useEffect(() => {
@@ -89,7 +89,7 @@ const Avatars = () => {
             <div
               onClick={() => {
                 setSrcId(0);
-                setSrc("/avatar-2.webm");
+                setSrc("/avatar-eng.webm");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
             >
@@ -98,7 +98,7 @@ const Avatars = () => {
             <div
               onClick={() => {
                 setSrcId(1);
-                setSrc("/jap.mp3");
+                setSrc("/avatar-japaense.webm");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
             >
@@ -107,7 +107,7 @@ const Avatars = () => {
             <div
               onClick={() => {
                 setSrcId(2);
-                setSrc("/eng1.mp3");
+                setSrc("/avatar-portu.webm");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
             >
@@ -116,7 +116,7 @@ const Avatars = () => {
             <div
               onClick={() => {
                 setSrcId(3);
-                setSrc("/eng1.mp3");
+                setSrc("/avatar-swedish.webm");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
             >
