@@ -4,7 +4,7 @@ import { Tween } from "react-gsap";
 import { Power4 } from "gsap";
 import { useSelector } from "react-redux";
 
-const Model = ({title,content}) => {
+const Model = ({ title, content }) => {
   return (
     <>
       <div
@@ -23,8 +23,8 @@ const Model = ({title,content}) => {
           ease={Power4.easeInOut}
           duration={0.7}
         >
-          <div className="w-[100%] h-[100%] pl-[100px] flex justify-between items-center ">
-            <div className="w-[55%] py-[25px] rounded-3xl h-[550px] backdrop-blur-xl bg-[#00000060] flex flex-col justify-center px-[40px]">
+          <div className="w-[100%] h-[100%] pr-[60px] pl-[100px] flex justify-between items-center ">
+            <div className="w-[50%] py-[25px] rounded-3xl h-[550px] backdrop-blur-xl bg-[#00000060] flex flex-col justify-center px-[40px]">
               <h1 className="text-[#fff]  font-medium text-[35px] mb-[10px]">
                 {title}:
               </h1>
@@ -41,9 +41,17 @@ const Model = ({title,content}) => {
                 })}
               </div>
             </div>
-            {/* <div className="w-[40%] h-[400px] ">
-              <Chart />
-            </div> */}
+            <div className="w-[45%] h-[400px] ">
+              <iframe
+                src="https://flo.uri.sh/visualisation/13639531/embed"
+                title="Interactive or visual content"
+                class="flourish-embed-iframe"
+                frameborder="0"
+                scrolling="no"
+                className="w-[100%] translate-y-[-50px] h-[500px] bg-[transparent] shrink-0 mb-[100px]"
+                sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+              ></iframe>
+            </div>
           </div>
         </Tween>
       </div>
