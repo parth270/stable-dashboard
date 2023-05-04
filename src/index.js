@@ -11,6 +11,7 @@ import StatisticsOnlyPage from "./routes/statistics-only";
 import SummarisedPage from "./routes/summarised";
 import NarratedPage from "./routes/narrated";
 import VideoDrivenPage from "./routes/video-driven";
+import AvatarsPage from "./routes/avatars";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/video-driven",
-    element:<VideoDrivenPage/>
+    element: <VideoDrivenPage />,
+  },
+  {
+    path: "/avatars",
+    element: <AvatarsPage />,
   },
 ]);
 
