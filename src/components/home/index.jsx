@@ -37,7 +37,7 @@ const Item = ({ title, route, icon, width, height }) => {
   // );
   return (
     <h1
-      className="text-[#fff] shrink-0 w-[100%] mt-[20px] text-[45px] hover:underline cursor-pointer flex items-center fckin font-semibold"
+      className="text-[#fff] shrink-0 w-[100%] hover:text-[#43d2db] mt-[20px] text-[45px] hover:underline cursor-pointer flex items-center fckin font-semibold"
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
