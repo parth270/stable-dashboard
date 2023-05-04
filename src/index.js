@@ -21,11 +21,16 @@ import Walk4 from "./routes/walk-4";
 import Walk5 from "./routes/walk-5";
 import Walk6 from "./routes/walk-6";
 import Walk7 from "./routes/walk-7";
+import IntroVid from "./routes/Intro-vid";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <IntroPage />,
+  },
+  {
+    path: "/intro",
+    element: <IntroVid />,
   },
   {
     path: "/walkthrough/1",

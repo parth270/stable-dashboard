@@ -63,13 +63,11 @@ const StatisticsOnlyContainer = () => {
           }}
           alt=""
         />
-        <h1 className="text-center text-[#fff] text-[28px] mb-[-20px] mt-[0px] font-semibold">
+        {/* <h1 className="text-center text-[#fff] text-[28px] mb-[-20px] mt-[0px] font-semibold">
           Marvelous Reports
-        </h1>
-        <GlobeConnectionsExample vr={false} />
-        <div className="w-[100%] h-[100px] shrink-0">
+        </h1> */}
+        {/* <GlobeConnectionsExample vr={false} /> */}
 
-        </div>
         {/* <iframe
           src="https://flo.uri.sh/visualisation/13639521/embed"
           title="Interactive or visual content"
