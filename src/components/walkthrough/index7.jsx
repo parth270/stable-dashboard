@@ -25,6 +25,7 @@ const Index4 = () => {
         zIndex: 1,
         backgroundImage: "url('/bg-bg.png')",
         backgroundColor: "#00000090",
+        backgroundSize:"cover"
       }}
     >
       <Left id={7} />

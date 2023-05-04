@@ -35,7 +35,7 @@ const Index4 = () => {
           zIndex: 1,
           backgroundImage: "url('/title-bg.png')",
           backgroundColor: "#fff",
-          // backgroundSize: "cover",
+          backgroundSize: "cover",
         }}
       >
         On Chain Publishing
