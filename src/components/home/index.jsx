@@ -40,10 +40,10 @@ const Item = ({ title, route, icon, width, height }) => {
 const HomeContainer = () => {
   return (
     <div className="w-[100%] h-[100vh] flex flex-col pt-[50px] pb-[30px]  items-center">
-      <h1 className="text-center text-[#fff] text-[28px]  font-semibold">
+      <h1 className="text-center text-[#fff] text-[28px] mt-[50px] font-semibold">
         Enhanced report Features
       </h1>
-      <div className=" h-[400px] w-[800px] grid grid-rows-2 grid-cols-4 mt-[94px] gap-x-[30px] gap-y-[20px]">
+      <div className=" h-[400px] w-[800px] grid grid-rows-2 grid-cols-4 mt-[150px] gap-x-[30px] gap-y-[20px]">
         <Item
           title="Ai Query"
           route="/ai-querry"
