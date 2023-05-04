@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import Close from "../close";
 
-const Video = ({ src ,route}) => {
+const Video = ({ src, route }) => {
   const videoEl = useRef();
   //   const attemptPlay = () => {
   //     videoEl &&
@@ -21,32 +21,34 @@ const Video = ({ src ,route}) => {
   const [play, setPlay] = useState(true);
   console.log(play);
   return (
-    <a href={route} target="_blank" >
-      <video
-        className="w-[400px] mr-[40px]  cursor-pointer cursor-pointer "
-        autoPlay
-        style={{
-          zIndex: 99999999,
-        }}
-        playsInline
-        //   onMouseOver={() => {
-        //     // if (!play) {
-        //     videoEl.current.play();
-        //     setPlay(true);
-        //     // } else {
+    <Suspense fallback={null}>
+      <a href={route} target="_blank">
+        <video
+          className="w-[400px] mr-[40px]  cursor-pointer cursor-pointer "
+          autoPlay
+          style={{
+            zIndex: 99999999,
+          }}
+          playsInline
+          //   onMouseOver={() => {
+          //     // if (!play) {
+          //     videoEl.current.play();
+          //     setPlay(true);
+          //     // } else {
 
-        //     // }
-        //   }}
-        //   onMouseLeave={() => {
-        //     videoEl.current.pause();
-        //     setPlay(false);
-        //   }}
-        loop
-        src={src}
-        muted={true}
-        ref={videoEl}
-      ></video>
-    </a>
+          //     // }
+          //   }}
+          //   onMouseLeave={() => {
+          //     videoEl.current.pause();
+          //     setPlay(false);
+          //   }}
+          loop
+          src={src}
+          muted={true}
+          ref={videoEl}
+        ></video>
+      </a>
+    </Suspense>
   );
 };
 

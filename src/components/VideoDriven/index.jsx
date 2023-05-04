@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import Close from "../close";
 
 const VideoDrivenContainer = () => {
@@ -16,30 +16,32 @@ const VideoDrivenContainer = () => {
   }, []);
   const [play, setPlay] = useState(true);
   return (
-    <div className="w-[100%] h-[100vh] p-[40px] relative overflow-hidden justify-center flex-col items-center">
-      <Close />
-      <video
-        className="w-[100%] h-[100%] cursor-pointer "
-        autoPlay
-        controls
-        style={{
-          zIndex: 1000,
-        }}
-        playsInline
-        onClick={() => {
-          if (!play) {
-            videoEl.current.play();
-            setPlay(true);
-          } else {
-            videoEl.current.pause();
-            setPlay(false);
-          }
-        }}
-        loop
-        src={"/bgWeb.mp4"}
-        ref={videoEl}
-      ></video>
-    </div>
+    <Suspense fallback={null}>
+      <div className="w-[100%] h-[100vh] p-[40px] relative overflow-hidden justify-center flex-col items-center">
+        <Close />
+        <video
+          className="w-[100%] h-[100%] cursor-pointer "
+          autoPlay
+          controls
+          style={{
+            zIndex: 1000,
+          }}
+          playsInline
+          onClick={() => {
+            if (!play) {
+              videoEl.current.play();
+              setPlay(true);
+            } else {
+              videoEl.current.pause();
+              setPlay(false);
+            }
+          }}
+          loop
+          src={"/bgWeb.mp4"}
+          ref={videoEl}
+        ></video>
+      </div>
+    </Suspense>
   );
 };
 

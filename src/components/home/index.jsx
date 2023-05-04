@@ -44,7 +44,7 @@ const Item = ({ title, route, icon, width, height }) => {
           router(route, {
             replace: true,
           });
-          dispatch(setLoading(false));
+          // dispatch(setLoading(false));
         }, 1700);
       }}
     >

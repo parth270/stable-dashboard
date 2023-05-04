@@ -1,10 +1,14 @@
 import React, { Suspense } from "react";
-const ImmersiveExperience = React.lazy(() => import("../views/immersive-experience"));
+import Loader from "../utils/loader";
+const ImmersiveExperience = React.lazy(() =>
+  import("../views/immersive-experience")
+);
 
 const ImmersiveExperiencePage = () => {
   return (
-    // <Suspense fallback={<Loader />}>
-    <ImmersiveExperience />
+    <Suspense fallback={<Loader />}>
+      <ImmersiveExperience />
+    </Suspense>
   );
 };
 
