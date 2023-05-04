@@ -15,7 +15,7 @@ const HomeLayout = ({ children }) => {
           zIndex: 10,
         }}
       >
-        {location.pathname === "/" && (
+        {(location.pathname === "/" ||location.pathname === "/home")  && (
           <img
             src="/front.png"
             className="w-[90px] absolute top-[28px] left-[50px] cursor-pointer"
