@@ -3,6 +3,7 @@ import Close from "../close";
 import GlobeConnectionsExample from "../globe/globeContainer";
 import useWidth from "../../hooks/useWidth";
 import useHeight from "../../hooks/useHeigth";
+// import D3Container from "./d3Container";
 
 const StatisticsOnlyContainer = () => {
   return (
@@ -14,11 +15,11 @@ const StatisticsOnlyContainer = () => {
           vr={false}
         /> */}
 
-        <iframe
+        {/* <iframe
           src="https://troika-examples.netlify.app/#globeConnections"
           className="w-[100%] h-[100vh] "
           frameborder="0"
-        ></iframe>
+        ></iframe> */}
         <iframe
           src="https://flo.uri.sh/visualisation/13639521/embed"
           title="Interactive or visual content"
