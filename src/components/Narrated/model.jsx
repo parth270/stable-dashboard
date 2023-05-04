@@ -4,22 +4,7 @@ import { Tween } from "react-gsap";
 import { Power4 } from "gsap";
 import { useSelector } from "react-redux";
 
-const Model = () => {
-  const title = "Executive Summary";
-  const content = [
-    `Inflation in Japan will likely recede over the next year or so but could stage a dramatic rebound later this decade. This could lead to much higher Japanese bond yields than what investors are currently anticipating.`,
-    `Decades of low rates in Japan created a centrifugal force of funds flowing from Japan to the rest of the world. Higher JGB yields could trigger the opposite force.`,
-    `Japanese savers today own a staggering $6.5 trillion of foreign assets. This means that once the market realizes that JGB yields are set to structurally rise (something that has not happened in more than three decades), then this could kick up a storm in global markets. • The risk is that the reversal in capital flows could be disruptive because the accumulation of these foreign assets took place over decades, but their sale could be concentrated over a short period. • Strategic investors should remain short JGBs and long the yen to profit from the BOJ’s coming tectonic pivot. • With Japan being the largest foreign holder of US long-term securities, US Treasury yields could rise as Japan repatriates capital back home, with potentially negative knock-on effects on US stocks too.`,
-    ,
-    `The risk is that the reversal in capital flows could be disruptive because the
- accumulation of these foreign assets took place over decades, but their sale
- could be concentrated over a short period.`,
-    `• Strategic investors should remain short JGBs and long the yen to profit from the
- BOJ’s coming tectonic pivot.`,
-    `With Japan being the largest foreign holder of US long-term securities, US
- Treasury yields could rise as Japan repatriates capital back home, with
- potentially negative knock-on effects on US stocks too. `,
-  ];
+const Model = ({ title, content }) => {
   return (
     <>
       <div
@@ -40,25 +25,33 @@ const Model = () => {
         >
           <div className="w-[100%] h-[100%] pl-[100px] flex justify-between items-center ">
             <div className="w-[55%] py-[25px] rounded-3xl h-[550px] backdrop-blur-xl bg-[#00000060] flex flex-col justify-center px-[40px]">
-              <h1 className="text-[#fff]  font-medium text-[35px] mb-[10px]">
+              <h1 className="text-[#fff] fckin  font-medium text-[35px] mb-[10px]">
                 {title}:
               </h1>
               <div className="w-[100%] overflow-y-auto scroll-bar-cool h-[400px] pr-[50px]">
                 {content.map((item, i) => {
                   return (
-                    <p
+                    <li
                       key={i}
-                      className="text-[#fff] text-[18px] mt-[10px] font-medium"
+                      className="text-[#fff] fckin list-inside text-[18px] mt-[10px] font-medium"
                     >
                       {item}
-                    </p>
+                    </li>
                   );
                 })}
               </div>
             </div>
-            {/* <div className="w-[40%] h-[400px] ">
-              <Chart />
-            </div> */}
+            <div className="w-[45%] h-[400px] ">
+              <iframe
+                src="https://flo.uri.sh/visualisation/13639521/embed"
+                title="Interactive or visual content"
+                class="flourish-embed-iframe"
+                frameborder="0"
+                scrolling="no"
+                className="w-[100%] translate-y-[-50px] h-[500px] bg-[transparent] shrink-0 mb-[100px]"
+                sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+              ></iframe>
+            </div>
           </div>
         </Tween>
       </div>

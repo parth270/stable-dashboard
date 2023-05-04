@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import AudioPlayer from "react-h5-audio-player";
 
-const Aud = () => {
+const Aud = ({ change }) => {
   const ref = useRef();
   const [src, setSrc] = useState("/eng.mp3");
   const [srcId, setSrcId] = useState(0);
@@ -88,6 +88,7 @@ const Aud = () => {
             <div
               onClick={() => {
                 setSrcId(0);
+                change(0);
                 setSrc("/eng.mp3");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
@@ -97,6 +98,7 @@ const Aud = () => {
             <div
               onClick={() => {
                 setSrcId(1);
+                change(1);
                 setSrc("/jap.mp3");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
@@ -106,6 +108,7 @@ const Aud = () => {
             <div
               onClick={() => {
                 setSrcId(2);
+                change(2);
                 setSrc("/portu.mp3");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
@@ -114,7 +117,8 @@ const Aud = () => {
             </div>
             <div
               onClick={() => {
-                setSrcId(2);
+                setSrcId(3);
+                change(3);
                 setSrc("/swedish.mp3");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
