@@ -22,6 +22,7 @@ import Walk5 from "./routes/walk-5";
 import Walk6 from "./routes/walk-6";
 import Walk7 from "./routes/walk-7";
 import IntroVid from "./routes/Intro-vid";
+import Login from "./components/Login";
 
 const router = createBrowserRouter([
   {
@@ -93,8 +94,10 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <Loader>
-      <RouterProvider router={router} />
-    </Loader>
+    <Login>
+      <Loader>
+        <RouterProvider router={router} />
+      </Loader>
+    </Login>
   </Provider>
 );
