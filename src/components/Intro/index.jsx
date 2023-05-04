@@ -16,9 +16,9 @@ const IntroContainer = () => {
           className="w-[50px] cursor-pointer translate-y-[24px] translate-x-[20px]"
           alt=""
           onClick={() => {
-            dispatch(setLoading(true));
+            dispatch(setLoading(true)); 
             setTimeout(() => {
-              router("/home");
+              router("/walkthrough/1");
               dispatch(setLoading(false));
             }, 1700);
           }}
