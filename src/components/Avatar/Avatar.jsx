@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const Avatars = () => {
+const Avatars = ({ change }) => {
   const videoEl = useRef();
   const attemptPlay = () => {
     videoEl &&
@@ -16,7 +16,7 @@ const Avatars = () => {
   const [play, setPlay] = useState(true);
   const [src, setSrc] = useState("/avatar-eng.webm");
   const [srcId, setSrcId] = useState(0);
-  const opt = ["Jane", "Japanese", "portugese", "swedish"];
+  const opt = ["Jane", "Japanese", "portugese", "swedish", "Toon", "ASl"];
   const [clicked, setClicked] = useState(false);
   const [hover, setHover] = useState(false);
   React.useEffect(() => {
@@ -89,6 +89,7 @@ const Avatars = () => {
             <div
               onClick={() => {
                 setSrcId(0);
+                change(0);
                 setSrc("/avatar-eng.webm");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
@@ -98,6 +99,7 @@ const Avatars = () => {
             <div
               onClick={() => {
                 setSrcId(1);
+                change(1);
                 setSrc("/avatar-japaense.webm");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm mb-[4px] flex items-center justify-center "
@@ -107,6 +109,7 @@ const Avatars = () => {
             <div
               onClick={() => {
                 setSrcId(2);
+                change(2);
                 setSrc("/avatar-portu.webm");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
@@ -116,11 +119,32 @@ const Avatars = () => {
             <div
               onClick={() => {
                 setSrcId(3);
+                change(3);
                 setSrc("/avatar-swedish.webm");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
             >
               {opt[3]}
+            </div>
+            <div
+              onClick={() => {
+                setSrcId(4);
+                change(0);
+                setSrc("/toon-vo.webm");
+              }}
+              className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
+            >
+              {opt[4]}
+            </div>
+            <div
+              onClick={() => {
+                setSrcId(5);
+                change(0);
+                setSrc("/asl.webm");
+              }}
+              className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
+            >
+              {opt[5]}
             </div>
           </div>
         )}

@@ -4,22 +4,7 @@ import { Tween } from "react-gsap";
 import { Power4 } from "gsap";
 import { useSelector } from "react-redux";
 
-const Model = () => {
-  const title = "Executive Summary";
-  const content = [
-    `Inflation in Japan will likely recede over the next year or so but could stage a dramatic rebound later this decade. This could lead to much higher Japanese bond yields than what investors are currently anticipating.`,
-    `Decades of low rates in Japan created a centrifugal force of funds flowing from Japan to the rest of the world. Higher JGB yields could trigger the opposite force.`,
-    `Japanese savers today own a staggering $6.5 trillion of foreign assets. This means that once the market realizes that JGB yields are set to structurally rise (something that has not happened in more than three decades), then this could kick up a storm in global markets. • The risk is that the reversal in capital flows could be disruptive because the accumulation of these foreign assets took place over decades, but their sale could be concentrated over a short period. • Strategic investors should remain short JGBs and long the yen to profit from the BOJ’s coming tectonic pivot. • With Japan being the largest foreign holder of US long-term securities, US Treasury yields could rise as Japan repatriates capital back home, with potentially negative knock-on effects on US stocks too.`,
-    ,
-    `The risk is that the reversal in capital flows could be disruptive because the
- accumulation of these foreign assets took place over decades, but their sale
- could be concentrated over a short period.`,
-    `• Strategic investors should remain short JGBs and long the yen to profit from the
- BOJ’s coming tectonic pivot.`,
-    `With Japan being the largest foreign holder of US long-term securities, US
- Treasury yields could rise as Japan repatriates capital back home, with
- potentially negative knock-on effects on US stocks too. `,
-  ];
+const Model = ({title,content}) => {
   return (
     <>
       <div
