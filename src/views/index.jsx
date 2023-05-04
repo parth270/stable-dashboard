@@ -4,7 +4,7 @@ import HomeContainer from "../components/home";
 
 const Home = () => {
   return (
-    <HomeLayout>
+    <HomeLayout src="" >
       <HomeContainer/>
     </HomeLayout>
   );
