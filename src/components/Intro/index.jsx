@@ -18,7 +18,7 @@ const IntroContainer = () => {
           onClick={() => {
             dispatch(setLoading(true)); 
             setTimeout(() => {
-              router("/intro");
+              router("/home");
               dispatch(setLoading(false));
             }, 1700);
           }}

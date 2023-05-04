@@ -9,7 +9,7 @@ const Item = ({ title, route, icon, width, height }) => {
   return (
     <div className=" flex flex-col items-center cursor-pointer">
       <div
-        className="w-[80%] h-[140px] bg-[#000] rounded-2xl flex items-center justify-center "
+        className="w-[80%] h-[180px] shrink-0 bg-[#000] rounded-2xl flex items-center justify-center "
         onClick={() => {
           dispatch(setLoading(true));
           setTimeout(() => {
@@ -30,7 +30,7 @@ const Item = ({ title, route, icon, width, height }) => {
           }}
         />
       </div>
-      <h4 className="text-[18px] text-center font-medium tracking-wider text-[#75FB8E] mt-[6px]">
+      <h4 className="text-[18px] fckin text-center font-medium tracking-wider text-[#75FB8E] mt-[6px]">
         {title}
       </h4>
     </div>
@@ -43,18 +43,18 @@ const HomeContainer = () => {
       <h1 className="text-center text-[#fff] text-[28px] mt-[50px] font-semibold">
         Enhanced report Features
       </h1>
-      <div className=" h-[400px] w-[800px] grid grid-rows-2 grid-cols-4 mt-[150px] gap-x-[30px] gap-y-[20px]">
+      <div className=" h-[500px] w-[800px] grid grid-rows-2 grid-cols-3 mt-[100px] gap-x-[30px] gap-y-[20px]">
+        <Item
+          title="Immersive Experience"
+          route="/immersive-experience"
+          icon="/web.png"
+          width={50}
+        />
         <Item
           title="Ai Query"
           route="/ai-querry"
           icon="/brain.png"
           width={50}
-        />
-        <Item
-          title="Statistics Only"
-          route="/statistics-only"
-          icon="/stats.png"
-          width={40}
         />
         <Item title="Narrated" route="/narrated" icon="/mic.png" width={40} />
         <Item
@@ -65,23 +65,26 @@ const HomeContainer = () => {
         />
         <Item title="Avatars" route="/avatars" icon="/woman.png" width={24} />
         <Item
-          title="Immersive Experience"
-          route="/immersive-experience"
-          icon="/web.png"
-          width={50}
-        />
-        <Item
-          title="Turnkey Solutions"
-          route="/turnkey-solutions"
+          title="Talking Points"
+          route="/walkthrough/4"
           icon="/key.png"
           width={50}
         />
+        {/* 
+        <Item
+          title="Statistics Only"
+          route="/statistics-only"
+          icon="/stats.png"
+          width={40}
+        />
+
+  
         <Item
           title="On-Chain Solutions"
           route="/on-chain-solutions"
           icon="/feather.png"
           width={40}
-        />
+        /> */}
       </div>
     </div>
   );
