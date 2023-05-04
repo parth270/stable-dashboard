@@ -24,7 +24,7 @@ const Login = ({ children }) => {
           <div className="p-[30px] ">
             <img
               src="/bib.png"
-              className="bg-[#00000090] rounded-xl w-[500px] p-[30px]"
+              className="bg-[#00000090] rounded-xl w-[400px] p-[30px]"
               alt=""
             />
             <p className="text-[16px] mt-[20px] font-bold font-mono">
