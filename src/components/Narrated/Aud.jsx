@@ -5,7 +5,7 @@ const Aud = () => {
   const ref = useRef();
   const [src, setSrc] = useState("/eng.mp3");
   const [srcId, setSrcId] = useState(0);
-  const opt = ["English", "Japanese", "portugese"];
+  const opt = ["English", "Japanese", "portugese", "swedish"];
   React.useEffect(() => {
     console.log(ref.current);
     if (ref.current) {
@@ -106,11 +106,20 @@ const Aud = () => {
             <div
               onClick={() => {
                 setSrcId(2);
-                setSrc("/eng1.mp3");
+                setSrc("/portu.mp3");
               }}
               className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
             >
               {opt[2]}
+            </div>
+            <div
+              onClick={() => {
+                setSrcId(2);
+                setSrc("/swedish.mp3");
+              }}
+              className="w-[100%] h-[34px] cursor-pointer text-[#000] capitalize font-medium tracking-wide text-[13px] tracking-wide rounded-sm flex items-center justify-center "
+            >
+              {opt[3]}
             </div>
           </div>
         )}
