@@ -117,9 +117,9 @@ const HomeContainer = () => {
         <img
           src="/face-1.png"
           style={{
-            height:screen.h-100
+            height: screen.h - 100,
           }}
-          className="w-[500px] absolute scale-111 object-contain  right-0"
+          className="w-[500px] absolute scale-111 right-0"
           alt=""
         />
         {/* 

@@ -19,14 +19,29 @@ const Index4 = () => {
     //   How would you like to experience your report?
     // </h1>
 
-    <div className="w-[100%] h-[100vh] flex flex-col   relative   ">
+    <div
+      className="w-[100%] h-[100vh] flex flex-col   relative   "
+      style={{
+        zIndex: 1,
+        backgroundImage: "url('/bg-bg.png')",
+        backgroundColor: "#00000090",
+        backgroundSize: "cover",
+      }}
+    >
       <Left id={6} />
       <Right id={6} />
-
-      <h1 className="fckin mt-[22px] font-medium text-[#fff] text-[44px] mx-[7%] w-[500px]">
+      <h1
+        className="text-[#fff] shrink-0 w-[100%] text-[50px] h-[150px] flex items-center pl-[120px] fckin font-semibold"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/title-bg.png')",
+          backgroundColor: "#fff",
+          // backgroundSize: "cover",
+        }}
+      >
         Immersive Experiences
       </h1>
-      <div className="w-[100%] mt-[30px] h-[100%] bg-[#000] relative pr-[450px] pl-[7%] py-[70px]">
+      <div className="w-[100%] h-[100%] bg-[#00000090] relative pr-[450px] pl-[7%] py-[70px]">
         <h3 className="fckin leading-[40px] text-[30px] font-medium text-[#fff] mt-[40px] tracking-wide">
           Immersive and data-driven bespoke report creation as well as turnkey
           services makes your publication engaging, Interactive and appealing to

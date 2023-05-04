@@ -19,16 +19,32 @@ const Index4 = () => {
     //   How would you like to experience your report?
     // </h1>
 
-    <div className="w-[100%] h-[100vh] flex flex-col   relative   ">
+    <div
+      className="w-[100%] h-[100vh] flex flex-col   relative  bg-right "
+      style={{
+        zIndex: 1,
+        backgroundImage: "url('/bg-bg.png')",
+        backgroundColor: "#00000090",
+        backgroundSize:"cover"
+      }}
+    >
       <Left id={5} />
       <Right id={5} />
 
-      <h1 className="fckin mt-[22px] font-medium text-[#fff] text-[44px] mx-[7%] w-[500px]">
+      <h1
+        className="text-[#fff] shrink-0 w-[100%] text-[50px] h-[150px] flex items-center pl-[120px] fckin font-semibold"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/title-bg.png')",
+          backgroundColor: "#fff",
+          // backgroundSize: "cover",
+        }}
+      >
         On Chain Publishing
       </h1>
-      <div className="w-[100%] mt-[30px] flex h-[100%] bg-[#000] relative px-[7%] py-[70px]">
+      <div className="w-[100%] flex h-[100%] bg-[#00000090] relative px-[7%] py-[70px]">
         <div className="w-[65%]">
-          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#ecc867] mt-[40px] tracking-wide">
+          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#ecc867] mt-[0px] tracking-wide">
             Features:
           </h3>
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[40px] tracking-wide">
@@ -54,7 +70,7 @@ const Index4 = () => {
           </li>
         </div>
         <div className="w-[35%]">
-          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#ecc867] mt-[40px] tracking-wide">
+          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#ecc867] mt-[0px] tracking-wide">
             Value:
           </h3>
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[40px] tracking-wide">
@@ -70,17 +86,17 @@ const Index4 = () => {
             Monetization:
           </h3>
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[40px] tracking-wide">
-           Fractional Purchases
+            Fractional Purchases
           </li>
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[0px] tracking-wide">
-           Royalty Reselling
+            Royalty Reselling
           </li>
         </div>
-        <img
+        {/* <img
           src="/got.png"
           className="w-[600px] h-[600px] absolute bottom-[-410px] left-[-300px] object-contain"
           alt=""
-        />
+        /> */}
       </div>
     </div>
   );
