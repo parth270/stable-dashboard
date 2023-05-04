@@ -12,6 +12,7 @@ import SummarisedPage from "./routes/summarised";
 import NarratedPage from "./routes/narrated";
 import VideoDrivenPage from "./routes/video-driven";
 import AvatarsPage from "./routes/avatars";
+import ImmersiveExperiencePage from "./routes/immersive-experience";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/avatars",
     element: <AvatarsPage />,
+  },
+  {
+    path: "/immersive-experience",
+    element: <ImmersiveExperiencePage />,
   },
 ]);
 
