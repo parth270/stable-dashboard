@@ -7,20 +7,46 @@ import useHeight from "../../hooks/useHeigth";
 const StatisticsOnlyContainer = () => {
   return (
     <>
-      <div className="w-[100%] h-[100vh] relative overflow-hidden flex-col items-center">
+      <div className="w-[100%] h-[100vh] relative overflow-x-hidden overflow-y-scroll scroll-bar-cool flex-col items-center">
         <Close />
-        <h1 className="text-center text-[#fff] text-[28px] mt-[50px]  font-semibold">
-          Statistics Only
-        </h1>
+
         {/* <GlobeConnectionsExample
           vr={false}
         /> */}
 
         <iframe
           src="https://troika-examples.netlify.app/#globeConnections"
-          className="w-[100%] h-[100vh] absolute top-0 left-0"
+          className="w-[100%] h-[100vh] "
           frameborder="0"
         ></iframe>
+        <iframe
+          src="https://flo.uri.sh/visualisation/13639521/embed"
+          title="Interactive or visual content"
+          class="flourish-embed-iframe"
+          frameborder="0"
+          scrolling="no"
+          className="w-[100%] h-[600px]"
+          sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+        ></iframe>
+        <iframe
+          src="https://flo.uri.sh/visualisation/13639531/embed"
+          title="Interactive or visual content"
+          class="flourish-embed-iframe"
+          frameborder="0"
+          scrolling="no"
+          className="w-[100%] h-[600px]"
+          sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+        ></iframe>
+        <iframe
+          src="https://flo.uri.sh/visualisation/13639491/embed"
+          title="Interactive or visual content"
+          class="flourish-embed-iframe"
+          frameborder="0"
+          scrolling="no"
+          className="w-[100%] h-[600px]"
+          sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+        ></iframe>
+        {/* <D3Container/> */}
       </div>
     </>
   );
