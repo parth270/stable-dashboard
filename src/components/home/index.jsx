@@ -119,7 +119,7 @@ const HomeContainer = () => {
           style={{
             height: screen.h - 100,
           }}
-          className="w-[500px] absolute scale-111 right-0"
+          className=" absolute scale-111 right-0"
           alt=""
         />
         {/* 
