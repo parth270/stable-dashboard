@@ -56,6 +56,14 @@ const StatisticsOnlyContainer = () => {
           className="w-[80%] h-[600px] bg-[transparent] shrink-0 mb-[100px]"
           sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
         ></iframe>
+        <h1 className="text-center text-[#fff] tracking-wide text-[28px] mb-[50px]  font-semibold">
+          Brilliants Representations
+        </h1>
+        <img
+          src="11.gif"
+          className="w-[80%] h-[600px]  object-contain bg-[#000] shrink-0 mb-[100px]"
+          alt=""
+        />
         {/* <iframe
           src="https://flo.uri.sh/visualisation/13639521/embed"
           title="Interactive or visual content"
