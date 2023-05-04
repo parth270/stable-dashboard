@@ -66,7 +66,7 @@ const Avatars = () => {
         style={{
           zIndex: 9999999999999,
         }}
-        className="w-[140px] absolute bottom-[50px] right-[320px] border-[1px] border-[#000] cursor-pointer  h-[40px] rounded-3xl  translate-y-[8px] rounded-sm bg-[#00000017] flex items-center justify-center font-medium text-[14px] text-[#fff]  right-0 "
+        className="w-[140px] absolute bottom-[50px] right-[320px] border-[1px] border-[#000] cursor-pointer  h-[40px] rounded-3xl  translate-y-[8px] bg-[#00000017] flex items-center justify-center font-medium text-[14px] text-[#fff]  right-0 "
       >
         <p className="cursor-pointer font-medium capitalize translate-x-[-3px] text-[18px] text-[#000] font-medium tracking-wide">
           {opt[srcId]}
@@ -81,7 +81,7 @@ const Avatars = () => {
         />
         {clicked && (
           <div
-            className="w-[100%] min-h-[34px] py-[5px] px-[5px] bg-[#936083] rounded-3xl border-[1px] border-[#000]  rounded-sm absolute bottom-[45px]"
+            className="w-[100%] min-h-[34px] py-[5px] px-[5px] bg-[#936083] rounded-3xl border-[1px] border-[#000]  absolute bottom-[45px]"
             style={{
               zIndex: 1000000000000,
             }}
