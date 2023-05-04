@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setLoading } from "../../services/Model";
@@ -42,11 +42,13 @@ const IntroContainer = () => {
         }, 1700);
       }}
     >
-      <img
-        src="/bg-2.png"
-        className="w-[100%] h-[100vh] object-cover"
-        alt=""
-      />
+      <Suspense fallback={null} >
+        <img
+          src="/bg-2.png"
+          className="w-[100%] h-[100vh] object-cover"
+          alt=""
+        />
+      </Suspense>
     </div>
   );
 };
