@@ -10,7 +10,6 @@ const StatisticsOnlyContainer = () => {
     <>
       <div className="w-[100%] h-[100vh] relative overflow-x-hidden overflow-y-scroll flex scroll-bar-cool flex-col items-center">
         <Close />
-
         {/* <iframe
           src="https://troika-examples.netlify.app/#globeConnections"
           className="w-[100%] h-[100vh] "
@@ -57,7 +56,7 @@ const StatisticsOnlyContainer = () => {
         </h1>
         <img
           src="11.gif"
-          className="w-[60%] h-[600px]  bg-[#000] shrink-0 mb-[100px]"
+          className="w-[80%] h-[600px] rounded-[40px]  bg-[#000000] shrink-0 mb-[100px]"
           style={{
             objectFit: "contain",
           }}
