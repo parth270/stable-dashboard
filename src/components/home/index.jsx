@@ -37,7 +37,7 @@ const Item = ({ title, route, icon, width, height }) => {
   // );
   return (
     <h1
-      className="text-[#fff] shrink-0 w-[100%] hover:text-[#43d2db] mt-[20px] text-[45px] hover:underline cursor-pointer flex items-center fckin font-semibold"
+      className="text-[#fff] shrink-0 w-[100%] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
@@ -86,7 +86,7 @@ const HomeContainer = () => {
         Enhanced report Features
       </h1>
       <div className=" h-[100%] w-[100%] bg-[#00000090]  flex relative">
-        <div className="w-[50%] h-[100%] flex flex-col justify-center pl-[10%] items-center">
+        <div className="w-[50%] h-[100%] flex flex-col justify-center pl-[15%] items-center">
           <Item
             title="Immersive Experience"
             route="/immersive-experience"

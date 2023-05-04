@@ -42,7 +42,7 @@ const Index4 = () => {
       </h1>
       <div className="w-[100%] flex h-[100%] bg-[#00000090] relative px-[7%] py-[70px]">
         <div className="w-[100%]">
-          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#ecc867] mt-[40px] tracking-wide">
+          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#43d2db] mt-[40px] tracking-wide">
             Targetting Startups + Communities
           </h3>
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[40px] tracking-wide">

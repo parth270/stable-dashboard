@@ -45,32 +45,32 @@ const Index4 = () => {
         <h3 className="fckin leading-[40px] text-[30px] font-medium text-[#fff] mt-[40px] tracking-wide">
           Immersive and data-driven bespoke report creation as well as turnkey
           services makes your publication engaging, Interactive and appealing to
-          the communities of <span className="text-[#99f899]">NOW</span>
+          the communities of <span className="text-[#43d2db]">NOW</span>
         </h3>
         <div className="w-[500px] h-[200px] grid grid-rows-4 grid-cols-2">
           <h3 className="fckin leading-[40px] text-[20px] font-medium text-[#fff] mt-[40px] tracking-wide">
-            <span className="text-[#99f899]">Ai Querry</span>
+            <span className="text-[#43d2db]">Ai Querry</span>
           </h3>
           <h3 className="fckin leading-[40px] text-[20px] font-medium text-[#fff] mt-[40px] tracking-wide">
-            <span className="text-[#99f899]">Avatars</span>
+            <span className="text-[#43d2db]">Avatars</span>
           </h3>
           <h3 className="fckin leading-[40px] text-[20px] font-medium text-[#fff] mt-[40px] tracking-wide">
-            <span className="text-[#99f899]">Statistics Only</span>
+            <span className="text-[#43d2db]">Statistics Only</span>
           </h3>
           <h3 className="fckin leading-[40px] text-[20px] font-medium text-[#fff] mt-[40px] tracking-wide">
-            <span className="text-[#99f899]">Immersive Experience</span>
+            <span className="text-[#43d2db]">Immersive Experience</span>
           </h3>
           <h3 className="fckin leading-[40px] text-[20px] font-medium text-[#fff] mt-[40px] tracking-wide">
-            <span className="text-[#99f899]">Narrated</span>
+            <span className="text-[#43d2db]">Narrated</span>
           </h3>
           <h3 className="fckin leading-[40px] text-[20px] font-medium text-[#fff] mt-[40px] tracking-wide">
-            <span className="text-[#99f899]">Turnkey Solutions</span>
+            <span className="text-[#43d2db]">Turnkey Solutions</span>
           </h3>
           <h3 className="fckin leading-[40px] text-[20px] font-medium text-[#fff] mt-[40px] tracking-wide">
-            <span className="text-[#99f899]">Video Driven</span>
+            <span className="text-[#43d2db]">Video Driven</span>
           </h3>
           <h3 className="fckin leading-[40px] text-[20px] font-medium text-[#fff] mt-[40px] tracking-wide">
-            <span className="text-[#99f899]">On-Chain Solutions</span>
+            <span className="text-[#43d2db]">On-Chain Solutions</span>
           </h3>
         </div>
         <img

@@ -44,7 +44,7 @@ const Index4 = () => {
       </h1>
       <div className="w-[100%] flex h-[100%] bg-[#00000090] relative px-[7%] py-[70px]">
         <div className="w-[65%]">
-          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#ecc867] mt-[0px] tracking-wide">
+          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#43d2db] mt-[0px] tracking-wide">
             Features:
           </h3>
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[40px] tracking-wide">
@@ -70,7 +70,7 @@ const Index4 = () => {
           </li>
         </div>
         <div className="w-[35%]">
-          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#ecc867] mt-[0px] tracking-wide">
+          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#43d2db] mt-[0px] tracking-wide">
             Value:
           </h3>
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[40px] tracking-wide">
@@ -82,7 +82,7 @@ const Index4 = () => {
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[0px] tracking-wide">
             User tracking
           </li>
-          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#ecc867] mt-[40px] tracking-wide">
+          <h3 className="fckin leading-[40px] text-[30px] font-medium uppercase text-[#43d2db] mt-[40px] tracking-wide">
             Monetization:
           </h3>
           <li className="fckin leading-[40px] text-[25px] font-medium  text-[#fff] mt-[40px] tracking-wide">

@@ -48,7 +48,7 @@ const Index4 = () => {
         <h3 className="fckin text-[30px] mt-[30px] font-medium text-[#fff] tracking-wide">
           Changing the way, we
         </h3>
-        <h3 className="fckin uppercase text-[30px] mt-[-5px] font-medium text-[#ecc867] tracking-wide">
+        <h3 className="fckin uppercase text-[30px] mt-[-5px] font-medium text-[#43d2db] tracking-wide">
           CREAte {">"} Curate {">"} distribute content
         </h3>
         <h3 className="fckin text-[30px] mt-[30px] font-medium text-[#fff] tracking-wide">
