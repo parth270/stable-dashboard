@@ -9,7 +9,8 @@ const Admin = () => {
     <div className="w-[100%] h-[100vh] flex items-center justify-center">
       <div className="w-[500px]">
         <p className="text-[20px] font-bold fckin">
-          Please add an Website Link to be embedded to the Intro page?
+          {/* Please add an Website Link to be embedded to the Intro page? */}
+          Please add an Image Link to be embedded to the Intro page?
         </p>
         <input
           type="text"
