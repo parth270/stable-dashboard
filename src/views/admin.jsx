@@ -20,17 +20,19 @@ const Admin = () => {
     }
   });
   return (
-    <div className="w-[100%] h-[100vh]">
+    <div
+      className="w-[100%] h-[100vh]  cursor-pointer"
+      onClick={() => {
+        dispatch(setLoading(true));
+        setTimeout(() => {
+          router("/home");
+          dispatch(setLoading(false));
+        }, 1700);
+      }}
+    >
       <iframe
-        onClick={() => {
-          dispatch(setLoading(true));
-          setTimeout(() => {
-            router("/home");
-            dispatch(setLoading(false));
-          }, 1700);
-        }}
         src={url}
-        className="w-[100%] h-[100vh] cursor-pointer"
+        className="w-[100%] h-[100vh]"
         frameborder="0"
         sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
       ></iframe>
