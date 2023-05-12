@@ -21,7 +21,7 @@ const Admin = () => {
   });
   return (
     <div className="w-[100%] h-[100vh]">
-      <img
+      <iframe
         onClick={() => {
           dispatch(setLoading(true));
           setTimeout(() => {
@@ -33,8 +33,7 @@ const Admin = () => {
         className="w-[100%] h-[100vh] cursor-pointer"
         frameborder="0"
         sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
-        alt=""
-      />
+      ></iframe>
     </div>
   );
 };
