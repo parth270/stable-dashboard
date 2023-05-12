@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setLoading } from "../../services/Model";
+import { setAdminUrl, setLoading } from "../../services/Model";
 
 // const IntroContainer = () => {
 //   const router = useNavigate();
@@ -37,12 +37,19 @@ const IntroContainer = () => {
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
-          router("/home");
-          dispatch(setLoading(false));
+          const item = localStorage.getItem("admin");
+          if (item) {
+            dispatch(setAdminUrl(item));
+            router("/content");
+            dispatch(setLoading(false));
+          } else {
+            router("/home");
+            dispatch(setLoading(false));
+          }
         }, 1700);
       }}
     >
-      <Suspense fallback={null} >
+      <Suspense fallback={null}>
         <img
           src="/bg-2.png"
           className="w-[100%] h-[100vh] object-cover"

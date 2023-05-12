@@ -13,6 +13,7 @@ import NarratedPage from "./routes/narrated";
 import VideoDrivenPage from "./routes/video-driven";
 import AvatarsPage from "./routes/avatars";
 import ImmersiveExperiencePage from "./routes/immersive-experience";
+import AdminExtra from "./routes/admin.jsx";
 import IntroPage from "./routes/Intro";
 import Walk1 from "./routes/walk-1";
 import Walk2 from "./routes/walk-2";
@@ -23,6 +24,7 @@ import Walk6 from "./routes/walk-6";
 import Walk7 from "./routes/walk-7";
 import IntroVid from "./routes/Intro-vid";
 import Login from "./components/Login";
+import Admin from './components/Admin/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -89,6 +91,14 @@ const router = createBrowserRouter([
     path: "/immersive-experience",
     element: <ImmersiveExperiencePage />,
   },
+  {
+    path:"/admin",
+    element:<Admin/>
+  },
+  {
+    path:"/content",
+    element:<AdminExtra/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

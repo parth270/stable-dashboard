@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const ModelSlice = createSlice({
   name: "Model",
-  initialState: { loading: false, forceStopLoad: false },
+  initialState: { loading: false, forceStopLoad: false, adminUrl: "" },
   reducers: {
     setLoading: (state, action) => {
       state.loading = action.payload;
@@ -10,9 +10,12 @@ const ModelSlice = createSlice({
     setForceStopLoad: (state, action) => {
       state.forceStopLoad = action.payload;
     },
+    setAdminUrl: (state, action) => {
+      state.adminUrl = action.payload;
+    },
   },
 });
 
-export const { setLoading, setForceStopLoad } = ModelSlice.actions;
+export const { setLoading, setForceStopLoad, setAdminUrl } = ModelSlice.actions;
 
 export default ModelSlice.reducer;
