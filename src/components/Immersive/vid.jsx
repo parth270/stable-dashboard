@@ -1,12 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../../services/Model";
 
-const Vid = ({src}) => {
+const Vid = ({ src }) => {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch(setLoading(true));
+  });
   return (
     <video
       className="w-[400px] mr-[40px]  cursor-pointer cursor-pointer "
       autoPlay
       style={{
         zIndex: 99999999,
+      }}
+      onLoad={() => {
+        dispatch(setLoading(false));
       }}
       playsInline
       //   onMouseOver={() => {
