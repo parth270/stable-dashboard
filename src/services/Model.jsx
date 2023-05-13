@@ -7,6 +7,7 @@ const ModelSlice = createSlice({
     forceStopLoad: false,
     adminUrl: "",
     video: false,
+    upload: false,
   },
   reducers: {
     setLoading: (state, action) => {
@@ -17,6 +18,7 @@ const ModelSlice = createSlice({
     },
     setAdminUrl: (state, action) => {
       state.adminUrl = action.payload;
+      state.upload=true
     },
     setVideo: (state, action) => {
       state.video = action.payload;

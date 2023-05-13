@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setAdminUrl, setLoading } from "../../services/Model";
 
@@ -31,15 +31,15 @@ import { setAdminUrl, setLoading } from "../../services/Model";
 const IntroContainer = () => {
   const router = useNavigate();
   const dispatch = useDispatch();
+  const state = useSelector((state) => state.model);
+  console.log(state)
   return (
     <div
       className="w-[100%] h-[100vh] cursor-pointer"
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
-          const item = localStorage.getItem("admin");
-          if (item) {
-            dispatch(setAdminUrl(item));
+          if (state.upload) {
             router("/content");
             dispatch(setLoading(false));
           } else {

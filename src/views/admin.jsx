@@ -9,23 +9,23 @@ const Admin = () => {
   const router = useNavigate();
   const [url, setUrl] = useState(null);
   const [video, setVideo] = useState(null);
-  React.useEffect(() => {
-    if (!url) {
-      const check = localStorage.getItem("admin");
-      const check1 = localStorage.getItem("video");
-      console.log(check1);
-      if (check) {
-        setUrl(check);
-        if (video) {
-          setVideo(true);
-        } else {
-          setVideo(false);
-        }
-      } else {
-        router("/home");
-      }
-    }
-  });
+  // React.useEffect(() => {
+  //   if (!url) {
+  //     const check = localStorage.getItem("admin");
+  //     const check1 = localStorage.getItem("video");
+  //     console.log(check1);
+  //     if (check) {
+  //       setUrl(check);
+  //       if (video) {
+  //         setVideo(true);
+  //       } else {
+  //         setVideo(false);
+  //       }
+  //     } else {
+  //       router("/home");
+  //     }
+  //   }
+  // });
 
   console.log(video);
   console.log(state);
@@ -57,7 +57,7 @@ const Admin = () => {
           autoPlay
         ></video>
       )} */}
-      {!state.video ? (
+      {!state.video? (
         <img
           src={state.adminUrl}
           alt={""}
