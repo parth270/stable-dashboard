@@ -22,9 +22,9 @@ const Video = ({ src, route, extraRoute }) => {
   const [play, setPlay] = useState(true);
   console.log(play);
   return (
-    <Suspense fallback={<Loader />}>
-      <div className="relative">
-        <a href={route} target="_blank">
+    <div className="relative">
+      <a href={route} target="_blank">
+        <Suspense fallback={<Loader />}>
           <video
             className="w-[400px] mr-[40px]  cursor-pointer cursor-pointer "
             autoPlay
@@ -49,18 +49,18 @@ const Video = ({ src, route, extraRoute }) => {
             muted={true}
             ref={videoEl}
           ></video>
+        </Suspense>
+      </a>
+      {extraRoute && (
+        <a
+          href={extraRoute}
+          className="text-[#fff] absolute bottom-[-25px] hover:underline left-0 h-[20px] flex items-center font-medium  ml-[10px]"
+          target="_blank"
+        >
+          Webflow Link
         </a>
-        {extraRoute && (
-          <a
-            href={extraRoute}
-            className="text-[#fff] absolute bottom-[-25px] hover:underline left-0 h-[20px] flex items-center font-medium  ml-[10px]"
-            target="_blank"
-          >
-            Webflow Link
-          </a>
-        )}
-      </div>
-    </Suspense>
+      )}
+    </div>
   );
 };
 
