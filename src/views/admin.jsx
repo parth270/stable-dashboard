@@ -57,7 +57,7 @@ const Admin = () => {
           autoPlay
         ></video>
       )} */}
-      {!state.video? (
+      {!state.video ? (
         <img
           src={state.adminUrl}
           alt={""}

@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import Close from "../close";
+import Loader from "../../utils/loader";
 
 const Video = ({ src, route, extraRoute }) => {
   const videoEl = useRef();
@@ -21,7 +22,7 @@ const Video = ({ src, route, extraRoute }) => {
   const [play, setPlay] = useState(true);
   console.log(play);
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader />}>
       <div className="relative">
         <a href={route} target="_blank">
           <video
