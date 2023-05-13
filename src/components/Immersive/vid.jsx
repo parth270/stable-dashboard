@@ -4,9 +4,6 @@ import { setLoading } from "../../services/Model";
 
 const Vid = ({ src }) => {
   const dispatch = useDispatch();
-  React.useEffect(() => {
-    dispatch(setLoading(true));
-  });
   return (
     <video
       className="w-[400px] mr-[40px]  cursor-pointer cursor-pointer "

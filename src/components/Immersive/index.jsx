@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import Close from "../close";
-import Loader from "../../utils/loader";
+import Loader from "../../utils/loader-1";
 
 const Vid = React.lazy(() => import("./vid"));
 
