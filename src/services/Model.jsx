@@ -2,7 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const ModelSlice = createSlice({
   name: "Model",
-  initialState: { loading: false, forceStopLoad: false, adminUrl: "" },
+  initialState: {
+    loading: false,
+    forceStopLoad: false,
+    adminUrl: "",
+    video: false,
+  },
   reducers: {
     setLoading: (state, action) => {
       state.loading = action.payload;
@@ -13,9 +18,13 @@ const ModelSlice = createSlice({
     setAdminUrl: (state, action) => {
       state.adminUrl = action.payload;
     },
+    setVideo: (state, action) => {
+      state.video = action.payload;
+    },
   },
 });
 
-export const { setLoading, setForceStopLoad, setAdminUrl } = ModelSlice.actions;
+export const { setLoading, setForceStopLoad, setAdminUrl, setVideo } =
+  ModelSlice.actions;
 
 export default ModelSlice.reducer;
