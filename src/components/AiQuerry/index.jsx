@@ -17,16 +17,11 @@ const AiQuerryContainer = () => {
         </h1>
         <iframe
           ref={ref}
-          src="https://pdfgpt.io/"
+          // src="https://pdfgpt.io/"
+          src="https://nicroux-pdfgpt-frontend.vercel.app/"
           className="w-[100%] h-[100vh] absolute top-0 left-0"
           frameborder="0"
         ></iframe>
-        <div
-          className="w-[100%] h-[50px] bg-[#19376d]  absolute bottom-0"
-          style={{
-            zIndex: 1000000000000,
-          }}
-        ></div>
       </div>
     </>
   );

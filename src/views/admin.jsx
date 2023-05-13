@@ -21,7 +21,7 @@ const Admin = () => {
   });
   return (
     <div
-      className="w-[100%] h-[100vh]  cursor-pointer"
+      className="w-[100%] h-[100vh] cursor-pointer"
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
