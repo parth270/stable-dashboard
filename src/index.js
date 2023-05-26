@@ -22,7 +22,7 @@ import Walk4 from "./routes/walk-4";
 import Walk5 from "./routes/walk-5";
 import Walk6 from "./routes/walk-6";
 import Walk7 from "./routes/walk-7";
-import Walk8 from "./routes/walk-8";
+import Walk8 from "./routes/walk-8.jsx";
 import IntroVid from "./routes/Intro-vid";
 import Login from "./components/Login";
 import Admin from './components/Admin/index.jsx'
