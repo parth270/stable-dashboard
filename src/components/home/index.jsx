@@ -113,6 +113,12 @@ const HomeContainer = () => {
             icon="/key.png"
             width={50}
           />
+          <Item
+            title="Products"
+            route="/walkthrough/8"
+            icon="/key.png"
+            width={50}
+          />
         </div>
         <img
           src="/face-1.png"
