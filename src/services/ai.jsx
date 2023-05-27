@@ -3,15 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const AISlice = createSlice({
   name: "Model",
   initialState: {
-    files: [],
+    filesId:null,
   },
   reducers: {
-    setFiles: (state, action) => {
-      state.files[0] = action.payload;
+    settingFiles: (state, action) => {
+      state.filesId = action.payload;
     },
   },
 });
 
-export const { setFiles } = AISlice.actions;
+export const { settingFiles } = AISlice.actions;
 
 export default AISlice.reducer;

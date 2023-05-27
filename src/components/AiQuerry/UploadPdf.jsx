@@ -1,8 +1,11 @@
 import { Power4 } from "gsap";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dropzone from "react-dropzone";
 import { Tween } from "react-gsap";
 import Answer from "./Answer";
+import FlipBook from "./Book";
+import { useDispatch } from "react-redux";
+import { settingFiles } from "../../services/ai";
 
 const DropZone = ({ change, trans, files, setFiles }) => {
   const [dropzoneActive, setDropzoneActive] = useState(false);
@@ -12,11 +15,54 @@ const DropZone = ({ change, trans, files, setFiles }) => {
 
   const handleDrop = (e) => {
     if (e[0]) {
+      analyze_documents("Molotov", e);
       setFiles(e);
-      change();
     } else {
       setDropzoneActive(false);
       setText("Recieved input other than PDF");
+    }
+  };
+
+  const dispatch = useDispatch();
+
+  const analyze_documents = async (user_id, files) => {
+    // create a new FormData instance
+
+    const formData = new FormData();
+
+    // append the file to the FormData instance
+
+    if (files) {
+      formData.append("file", files[0], files[0].name);
+      formData.append("user_id", user_id);
+      setText("Uploading...");
+    } else {
+      alert("Please select a file");
+      return;
+    }
+
+    // formData.append("file", file, file.name);
+
+    // define the request options
+    const requestOptions = {
+      method: "POST",
+      body: formData,
+      redirect: "follow",
+    };
+
+    try {
+      const response = await fetch(
+        "https://b656-3-133-102-91.ngrok-free.app/analyze_multiple_documents",
+        requestOptions
+      );
+      const result = await response.json();
+      //   setFileid(result.file_id);
+      console.log(result.file_id);
+      setText("Uploaded");
+      change();
+      dispatch(settingFiles(result.file_id));
+    } catch (error) {
+      console.log("error", error);
     }
   };
 
@@ -72,15 +118,9 @@ const DropZone = ({ change, trans, files, setFiles }) => {
               >
                 {/* move input element outside of the text container */}
                 <input {...getInputProps()} />
-                {!dropzoneActive ? (
-                  <p className="fckin text-[#fff] font-bold text-[24px]">
-                    {text}
-                  </p>
-                ) : (
-                  <p className="fckin text-[#fff] font-bold text-[24px]">
-                    Uploading...
-                  </p>
-                )}
+                <p className="fckin text-[#fff] font-bold text-[24px]">
+                  {text}
+                </p>
               </div>
             )}
           </Dropzone>
@@ -110,7 +150,9 @@ const UploadPdf = () => {
           }}
         />
       )}
-      <Answer files={files} />
+      <Answer />
+      <FlipBook files={files} />
+
       <div
         onClick={() => {
           setClicked(true);
