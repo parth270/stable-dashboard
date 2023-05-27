@@ -15,6 +15,7 @@ const VideoDrivenContainer = () => {
     attemptPlay();
   }, []);
   const [play, setPlay] = useState(true);
+  
   return (
     <div className="w-[100%] h-[100vh] p-[40px] relative overflow-hidden justify-center flex-col items-center">
       <Close />

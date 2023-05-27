@@ -15,6 +15,7 @@ const Avatars = ({ change }) => {
   }, []);
   const [play, setPlay] = useState(true);
   const [src, setSrc] = useState("/avatar-eng.webm");
+  const sources=["/avatar-eng.webm","/avatar-japaense.webm"]
   const [srcId, setSrcId] = useState(0);
   const opt = ["Jane", "Japanese", "portugese", "swedish", "Toon", "ASL"];
   const [clicked, setClicked] = useState(false);
