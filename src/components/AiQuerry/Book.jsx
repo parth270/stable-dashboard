@@ -3,10 +3,20 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HTMLFlipBook from "react-pageflip";
-import usePdfToImages from "../../hooks/useImages";
-
+import { Viewer, SpecialZoomLevel } from "@react-pdf-viewer/core";
+import { Worker } from "@react-pdf-viewer/core";
+import { Document } from "react-pdf";
+import { Page } from "react-pdf";
+import { pdfjs } from "react-pdf";
 
 const Book = ({ sizes, file }) => {
+  const [numPages, setNumPages] = useState(0);
+  const [arr, setArr] = useState([1, 2, 3, 4, 5, 6, 7]);
+  useEffect(() => {
+    pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+  });
+  console.log(arr, numPages);
+
   return (
     <>
       <HTMLFlipBook
@@ -15,7 +25,7 @@ const Book = ({ sizes, file }) => {
         className="flex"
         showCover={true}
       >
-        {[1, 2, 3, 4, 5, 6, 7].map((item, i) => {
+        {arr.map((item, i) => {
           return (
             <div key={i}>
               <div
@@ -24,11 +34,42 @@ const Book = ({ sizes, file }) => {
                   height: `${sizes.y}px`,
                   display: "flex !important",
                 }}
-                className="bg-[#fff] flex items-center justify-center"
+                className="bg-[#fff] flex items-center justify-center overflow-hidden"
               >
-                <span className="fckin text-[20px] font-bold">
+                {/* <span className="fckin text-[20px] font-bold">
                   Page-{i + 1}
-                </span>
+                </span> */}
+                {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+                    <Viewer
+                      fileUrl={URL.createObjectURL(file)}
+                      // defaultScale={SpecialZoomLevel.PageFit}
+                      defaultScale={SpecialZoomLevel.PageFit}
+                      currentPage={i+1}
+                    />
+                </Worker> */}
+                <Document
+                  style={{
+                    width: `${sizes.x / 2}px`,
+                  }}
+                  file={file}
+                  height={sizes.y}
+                  onLoadSuccess={(e) => {
+                    console.log(e._pdfInfo.numPages);
+                    const newArr = Array(e._pdfInfo.numPages).fill(0);
+                    setNumPages(e._pdfInfo.numPages);
+                    console.log(newArr);
+                    setArr(newArr);
+                  }}
+                >
+                  <Page
+                    pageNumber={i + 1}
+                    style={{
+                      objectFit: "contain",
+                      width: `${sizes.x / 2}px`,
+                      height: `${sizes.y / 2}px`,
+                    }}
+                  />
+                </Document>
               </div>
             </div>
           );
@@ -57,7 +98,7 @@ const FlipBook = ({ files }) => {
   });
 
   return (
-    <div className="w-[100%] h-[100vh] px-[100px] py-[100px]">
+    <div className="w-[100%] h-[100vh] px-[350px] py-[100px]">
       {files.length !== 0 && filesId ? (
         <div
           className="w-[100%] h-[100%] flex items-center justify-end"

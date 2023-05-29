@@ -1,61 +1,49 @@
-import { useState, useEffect } from 'react';
-import * as pdfjs from 'pdfjs-dist';
+import React, { useState, useEffect } from "react";
+import { pdfjs, Document } from "pdfjs-dist";
 
-const usePdfToImages = (pdfObject) => {
-  const [pdfImages, setPdfImages] = useState([]);
+
+const useImages = ({ pdfFile }) => {
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
-    if (pdfObject && pdfObject.type === 'application/pdf') {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const pdfData = new Uint8Array(event.target.result);
-        convertPdfToImages(pdfData);
-      };
-      reader.readAsArrayBuffer(pdfObject);
-    }
-  }, [pdfObject]);
+    const convertuseImages = async () => {
+      try {
+        const pdf = await pdfjs.getDocument(pdfFile).promise;
+        const numPages = pdf.numPages;
 
-  const convertPdfToImages = (pdfData) => {
-    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+        const pageImages = [];
 
-    const loadingTask = pdfjs.getDocument({ data: pdfData });
-
-    loadingTask.promise.then((pdf) => {
-      const numPages = pdf.numPages;
-      const images = [];
-
-      const renderPage = (pageNum) => {
-        pdf.getPage(pageNum).then((page) => {
+        for (let i = 1; i <= numPages; i++) {
+          const page = await pdf.getPage(i);
           const scale = 1.5;
           const viewport = page.getViewport({ scale });
-          const canvas = document.createElement('canvas');
-          const context = canvas.getContext('2d');
-          canvas.width = viewport.width;
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+
           canvas.height = viewport.height;
+          canvas.width = viewport.width;
 
           const renderContext = {
             canvasContext: context,
-            viewport,
+            viewport: viewport,
           };
 
-          page.render(renderContext).promise.then(() => {
-            const imageSrc = canvas.toDataURL();
-            images.push(imageSrc);
+          await page.render(renderContext).promise;
 
-            if (images.length === numPages) {
-              setPdfImages(images);
-            } else {
-              renderPage(pageNum + 1);
-            }
-          });
-        });
-      };
+          const imageData = canvas.toDataURL("image/png");
+          pageImages.push(imageData);
+        }
 
-      renderPage(1);
-    });
-  };
+        setImages(pageImages);
+      } catch (error) {
+        console.error("Error converting PDF to images:", error);
+      }
+    };
 
-  return pdfImages;
+    convertuseImages();
+  }, [pdfFile]);
+
+  return images;
 };
 
-export default usePdfToImages;
+export default useImages;
