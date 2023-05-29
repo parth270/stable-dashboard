@@ -4,28 +4,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HTMLFlipBook from "react-pageflip";
 import usePdfToImages from "../../hooks/useImages";
-import { PDFtoIMG } from "react-pdf-to-image";
 
-const Checking = ({ file }) => {
-  const [images, setImages] = useState([]);
-  console.log(images,"please check here");
-  return (
-    <PDFtoIMG file={file}>
-      {({ pages }) => {
-        if (!pages.length) return "Loading...";
-        return pages.map((page, index) => {
-          setImages([...images, page]);
-          return <React.Fragment key={index}></React.Fragment>;
-        });
-      }}
-    </PDFtoIMG>
-  );
-};
 
 const Book = ({ sizes, file }) => {
   return (
     <>
-      <Checking file={file} />
       <HTMLFlipBook
         width={sizes.x / 2}
         height={sizes.y}
