@@ -80,19 +80,19 @@ const FlipBook = ({ files }) => {
   useEffect(() => {
     if (sizes.x === 0) {
       const check = ref.current.getBoundingClientRect();
-      let x = (check.height * 756) / 538;
+      let x = (check.height * 761) / 538;
       let y = check.height;
       console.log(x, check.width);
       console.log(y, check.height);
       if (check.width > 1400) {
-        x = ((check.height - 200) * 756) / 538;
-        y = check.height - 200;
+        x = ((check.height - 250) * 761) / 538;
+        y = check.height - 250;
       }
       // 1404,904
       if (x > check.width) {
         console.log("this one is being implemmented");
         x = check.width - 50;
-        y = (x * 538) / 756;
+        y = (x * 538) / 761;
       }
       // 2560;
       // 1664;
