@@ -62,7 +62,6 @@ const Admin = () => {
     [files]
   );
 
-  console.log(files?.preview);
 
   function convertBlobToBase64(blobFile) {
     return new Promise((resolve, reject) => {
@@ -158,10 +157,8 @@ const Admin = () => {
         <button
           onClick={() => {
             if (files) {
-              console.log(files);
               if (curr === 1) {
                 convertFileVideoToBase64(files).then((e) => {
-                  console.log(e);
                   dispatch(setAdminUrl(e));
                   dispatch(setVideo(true));
                   // localStorage.setItem("admin", e);
@@ -174,7 +171,6 @@ const Admin = () => {
                 });
               } else {
                 convertFileToBase64(files).then((e) => {
-                  console.log(e);
                   dispatch(setAdminUrl(e));
                   dispatch(setVideo(false));
                   // localStorage.setItem("admin", e);

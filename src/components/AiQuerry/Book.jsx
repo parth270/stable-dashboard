@@ -8,7 +8,7 @@ import { Worker } from "@react-pdf-viewer/core";
 import { Document } from "react-pdf";
 import { Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css"
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 const Book = ({ sizes, file }) => {
   const [numPages, setNumPages] = useState(0);
@@ -16,7 +16,6 @@ const Book = ({ sizes, file }) => {
   useEffect(() => {
     pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   });
-  console.log(sizes.y / 2);
   return (
     <>
       <HTMLFlipBook
@@ -56,10 +55,8 @@ const Book = ({ sizes, file }) => {
                   height={sizes.y}
                   file={file}
                   onLoadSuccess={(e) => {
-                    console.log(e._pdfInfo.numPages);
                     const newArr = Array(e._pdfInfo.numPages).fill(0);
                     setNumPages(e._pdfInfo.numPages);
-                    console.log(newArr);
                     setArr(newArr);
                   }}
                 >
@@ -77,18 +74,34 @@ const Book = ({ sizes, file }) => {
 const FlipBook = ({ files }) => {
   const [loading, setLoading] = useState(false);
   const filesId = useSelector((state) => state.ai.filesId);
-  console.log(files[0], "pease");
   const ref = useRef();
   const [sizes, setSizes] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (sizes.x === 0) {
       const check = ref.current.getBoundingClientRect();
-      console.log(check);
+      let x = (check.height * 836) / 538;
+      let y = check.height;
+      console.log(x, check.width);
+      console.log(y, check.height);
+      if (check.width > 1800) {
+        x = ((check.height - 100) * 836) / 538;
+        y = check.height - 100;
+      }
+      // if (x > check.width) {
+      //   console.log("this one is being implemmented");
+      //   x = check.width - 50;
+      //   y = (x * 538) / 836;
+      // }
+
       setSizes({
-        x: (check.height * 836) / 538,
-        y: check.height,
+        x: x,
+        y: y,
       });
+      // setSizes({
+      //   x: (check.height * 836) / 538,
+      //   y: check.height,
+      // });
     }
   });
 

@@ -93,7 +93,6 @@ const Input = ({ id }) => {
         requestOptions
       );
       const result = await response.json();
-      console.log(result);
       setAnswer({
         show: true,
         loading: false,
@@ -103,7 +102,6 @@ const Input = ({ id }) => {
 
       // Push a new message object to history containing the question and all corresponding answers
     } catch (error) {
-      console.log("error", error);
       setAnswer({
         show: false,
         loading: false,
