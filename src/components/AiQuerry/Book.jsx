@@ -88,9 +88,10 @@ const FlipBook = ({ files }) => {
         x = ((check.height - 100) * 836) / 538;
         y = check.height - 100;
       }
+      // 1404,904
       if (x > check.width) {
         console.log("this one is being implemmented");
-        x = check.width - 100;
+        x = check.width - 50;
         y = (x * 538) / 836;
       }
       // 2560;
