@@ -95,7 +95,7 @@ const FlipBook = ({ files }) => {
     <div className="w-[100%] h-[100vh] px-[350px] py-[80px]">
       {files.length !== 0 && filesId ? (
         <div
-          className="w-[100%] h-[100%] flex items-center justify-end"
+          className="w-[100%] h-[100%] flex items-center justify-center"
           ref={ref}
         >
           <Book sizes={sizes} file={files[0]} />
