@@ -93,7 +93,8 @@ const FlipBook = ({ files }) => {
         x = check.width - 50;
         y = (x * 538) / 836;
       }
-
+      // 2560;
+      // 1664;
       setSizes({
         x: x,
         y: y,
