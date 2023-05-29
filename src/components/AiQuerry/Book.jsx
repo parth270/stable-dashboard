@@ -8,6 +8,8 @@ import { Worker } from "@react-pdf-viewer/core";
 import { Document } from "react-pdf";
 import { Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
+import useWidth from "../../hooks/useWidth";
+import useHeight from "../../hooks/useHeigth";
 // import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 const Book = ({ sizes, file }) => {
@@ -107,11 +109,17 @@ const FlipBook = ({ files }) => {
     }
   });
 
+  const width = useWidth();
+  const height = useHeight();
+  console.log(width);
+
+  const wCheck = (width * 90) / 100;
+  console.log(wCheck > 1400);
   return (
     <div className="w-[100%] h-[100vh] px-[5%] py-[20px]">
       {files.length !== 0 && filesId ? (
         <div
-          className="w-[100%] h-[100%] flex items-center justify-center"
+          className={`w-[100%] h-[100%] flex items-center justify-center ${wCheck > 1400 && "scale-125"} `}
           ref={ref}
         >
           <Book sizes={sizes} file={files[0]} />
