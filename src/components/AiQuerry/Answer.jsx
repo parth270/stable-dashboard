@@ -97,7 +97,7 @@ const Input = ({ id }) => {
       setAnswer({
         show: true,
         loading: false,
-        text: result[0].answer,
+        text: result.answer,
       });
       // Create an array of all the answers
 
