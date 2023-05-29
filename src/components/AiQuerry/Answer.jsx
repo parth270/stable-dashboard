@@ -42,7 +42,7 @@ const AnswerHolder = ({ answer, close }) => {
             {answer.loading ? (
               <Loader />
             ) : (
-              <p className="text-[16px] font-bold fckin text-[#e85b40] tracking-wide">
+              <p className="text-[16px] font-bold fckin text-[#000] tracking-wide">
                 {answer.text}
               </p>
             )}
@@ -52,7 +52,7 @@ const AnswerHolder = ({ answer, close }) => {
               }}
               className="w-[40px] h-[40px] absolute top-[10px] cursor-pointer flex items-center justify-center right-[20px]"
             >
-              <img src="/Cross.svg" alt="" />
+              <img src="/cross-orange.svg" alt="" />
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ const Input = ({ id }) => {
 
   return (
     <>
-      <div className="w-[400px] flex items-center h-[50px] absolute top-[20px] right-[20px] bg-[#fff] rounded-[2px] px-[10px] py-[4px]">
+      <div className="w-[400px] flex items-center h-[50px] absolute top-[20px] right-[20px] bg-[#fff] rounded-[2px] px-[10px] py-[4px] z-50">
         <input
           type="text"
           className="w-[100%] h-[100%] outline-none fckin text-[14px] font-medium"

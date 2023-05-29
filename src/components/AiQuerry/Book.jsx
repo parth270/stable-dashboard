@@ -78,21 +78,21 @@ const FlipBook = ({ files }) => {
   const filesId = useSelector((state) => state.ai.filesId);
   console.log(files[0], "pease");
   const ref = useRef();
-  const [sizes, setSizes] = useState({ x: 836, y: 538 });
+  const [sizes, setSizes] = useState({ x: 0, y: 0 });
 
-  // useEffect(() => {
-  //   if (sizes.x === 0) {
-  //     const check = ref.current.getBoundingClientRect();
-  //     console.log(check);
-  //     setSizes({
-  //       x: check.width,
-  //       y: check.height,
-  //     });
-  //   }
-  // });
+  useEffect(() => {
+    if (sizes.x === 0) {
+      const check = ref.current.getBoundingClientRect();
+      console.log(check);
+      setSizes({
+        x: (check.height * 836) / 538,
+        y: check.height,
+      });
+    }
+  });
 
   return (
-    <div className="w-[100%] h-[100vh] px-[350px] py-[80px]">
+    <div className="w-[100%] h-[100vh] px-[5%] py-[20px]">
       {files.length !== 0 && filesId ? (
         <div
           className="w-[100%] h-[100%] flex items-center justify-center"
