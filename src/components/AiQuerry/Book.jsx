@@ -84,7 +84,7 @@ const FlipBook = ({ files }) => {
       let y = check.height;
       console.log(x, check.width);
       console.log(y, check.height);
-      if (check.width > 1400) {
+      if (check.width > 1400 || x > 1400) {
         x = ((check.height - 100) * 836) / 538;
         y = check.height - 100;
       }
