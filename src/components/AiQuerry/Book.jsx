@@ -41,28 +41,31 @@ const FlipBook = ({ files }) => {
           className="w-[100%] h-[100%] flex items-center justify-end"
           ref={ref}
         >
-          <div>
-            <HTMLFlipBook
-              width={sizes.x / 2}
-              height={sizes.y}
-              showCover={true}
-            >
-              {[1, 2, 3, 4, 5, 6, 7].map((item, i) => {
-                return (
+          <HTMLFlipBook
+            width={sizes.x / 2}
+            height={sizes.y}
+            className="flex"
+            showCover={true}
+          >
+            {[1, 2, 3, 4, 5, 6, 7].map((item, i) => {
+              return (
+                <div key={i}>
                   <div
-                    key={i}
-                    className="bg-[#fff]"
                     style={{
                       width: `${sizes.x / 2}px`,
                       height: `${sizes.y}px`,
+                      display: "flex !important",
                     }}
+                    className="bg-[#fff] flex items-center justify-center"
                   >
-                    Page-{i + 1}
+                    <span className="fckin text-[20px] font-bold">
+                      Page-{i + 1}
+                    </span>
                   </div>
-                );
-              })}
-            </HTMLFlipBook>
-          </div>
+                </div>
+              );
+            })}
+          </HTMLFlipBook>
         </div>
       ) : (
         <div
