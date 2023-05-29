@@ -33,6 +33,7 @@ const Book = ({ sizes, file }) => {
                   width: `${sizes.x / 2}px`,
                   height: `${sizes.y}px`,
                   display: "flex !important",
+                  overflow: "hidden",
                 }}
                 className="bg-[#fff] flex items-center justify-center overflow-hidden"
               >
@@ -48,11 +49,9 @@ const Book = ({ sizes, file }) => {
                     />
                 </Worker> */}
                 <Document
-                  style={{
-                    width: `${sizes.x / 2}px`,
-                  }}
-                  file={file}
+                  width={sizes.x / 2}
                   height={sizes.y}
+                  file={file}
                   onLoadSuccess={(e) => {
                     console.log(e._pdfInfo.numPages);
                     const newArr = Array(e._pdfInfo.numPages).fill(0);
@@ -63,11 +62,8 @@ const Book = ({ sizes, file }) => {
                 >
                   <Page
                     pageNumber={i + 1}
-                    style={{
-                      objectFit: "contain",
-                      width: `${sizes.x / 2}px`,
-                      height: `${sizes.y / 2}px`,
-                    }}
+                    width={sizes.x / 2}
+                    height={sizes.y}
                   />
                 </Document>
               </div>
