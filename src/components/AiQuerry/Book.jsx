@@ -8,7 +8,7 @@ import { Worker } from "@react-pdf-viewer/core";
 import { Document } from "react-pdf";
 import { Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
-// import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 const Book = ({ sizes, file }) => {
   const [numPages, setNumPages] = useState(0);
