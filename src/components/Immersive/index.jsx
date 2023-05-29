@@ -4,7 +4,7 @@ import Loader from "../../utils/loader";
 
 const Vid = React.lazy(() => import("./vid"));
 
-const Video = ({ src, route, extraRoute }) => {
+const Video = ({ src, route, extraRoute,extraName }) => {
   return (
     <div className="relative">
       <a href={route} target="_blank">
@@ -18,7 +18,7 @@ const Video = ({ src, route, extraRoute }) => {
           className="text-[#fff] absolute bottom-[-25px] hover:underline left-0 h-[20px] flex items-center font-medium  ml-[10px]"
           target="_blank"
         >
-          Webflow Link
+         {extraName}
         </a>
       )}
     </div>
@@ -38,11 +38,13 @@ const ImmersiveContainer = () => {
             src="/harvard.mp4"
             route="https://threejs-template-blush.vercel.app/"
             extraRoute="https://harvardbusinessschool.webflow.io/"
+            extraName={"Harvard Portal"}
           />
           <Video
             src="/hfs.mp4"
             route="https://hfs-meme.vercel.app/"
             extraRoute="https://hfs-publishing.webflow.io/"
+            extraName={"HFS Portal"}
           />
           <Video
             src="/bca.mp4"
