@@ -42,7 +42,7 @@ const AnswerHolder = ({ answer, close }) => {
             {answer.loading ? (
               <Loader />
             ) : (
-              <p className="text-[16px] font-bold fckin text-[#fff] tracking-wide">
+              <p className="text-[16px] font-bold fckin text-[#e85b40] tracking-wide">
                 {answer.text}
               </p>
             )}
