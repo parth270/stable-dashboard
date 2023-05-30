@@ -55,9 +55,9 @@ const ImmersiveContainer = () => {
           </div>
         </div>
 
-        <div className="w-[100%] h-[100px] flex items-center px-[15%] justify-between">
+        <div className="w-[100%] flex flex-col items-center pb-[100px] min-h-[100px] pl-[100px]">
           <h1
-            className="text-[#fff] shrink-0 w-[400px] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+            className="text-[#fff] w-[980px] shrink-0  hover:text-[#43d2db] mt-[20px] text-[28px] hover:underline cursor-pointer flex items-center fckin "
             onClick={() => {}}
           >
             <a
@@ -69,7 +69,7 @@ const ImmersiveContainer = () => {
             </a>
           </h1>
           <h1
-            className="text-[#fff] shrink-0 w-[500px] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+            className="text-[#fff] shrink-0 w-[980px] hover:text-[#43d2db] mt-[20px] text-[28px] hover:underline cursor-pointer flex items-center fckin "
             onClick={() => {}}
           >
             <a
@@ -80,10 +80,8 @@ const ImmersiveContainer = () => {
               Biblo Platform
             </a>
           </h1>
-        </div>
-        <div className="w-[100%] h-[100px] flex items-center px-[15%] justify-between">
           <h1
-            className="text-[#fff] shrink-0 w-[400px] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+            className="text-[#fff] w-[980px] shrink-0  hover:text-[#43d2db] mt-[20px] text-[28px] hover:underline cursor-pointer flex items-center fckin "
             onClick={() => {}}
           >
             <a
@@ -95,7 +93,7 @@ const ImmersiveContainer = () => {
             </a>
           </h1>
           <h1
-            className="text-[#fff] shrink-0 w-[500px] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+            className="text-[#fff] shrink-0 w-[980px] hover:text-[#43d2db] mt-[20px] text-[28px] hover:underline cursor-pointer flex items-center fckin "
             onClick={() => {}}
           >
             <a
