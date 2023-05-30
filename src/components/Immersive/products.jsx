@@ -27,30 +27,85 @@ const Video = ({ src, route, extraRoute }) => {
 const ImmersiveContainer = () => {
   return (
     <>
-      <div className="w-[100%] h-[100vh] relative overflow-hidden flex-col items-center">
+      <div className="w-[100%] h-[100vh] relative overflow-y-auto  ">
         <Close />
-        <h1 className="text-center text-[#fff] text-[28px] mt-[50px]  font-semibold">
+        <h1 className="text-center text-[#fff] text-[28px] pt-[50px]  font-semibold">
           Products
         </h1>
-        <div className="w-[100%] h-[270px] mt-[40px] flex items-center justify-center">
-          <Video
-            src="https://player.vimeo.com/video/825085390?h=0fd0e9c4c5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-            route="https://player.vimeo.com/video/825085390?h=0fd0e9c4c5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-          />
-          <Video
-            src="https://player.vimeo.com/video/818001094?h=a33b3c2513&badge=0&autopause=0&player_id=0&app_id=58479/embed"
-            route="https://player.vimeo.com/video/818001094?h=a33b3c2513&badge=0&autopause=0&player_id=0&app_id=58479/embed"
-          />
+        <div className="w-[100%] h-[600px] ">
+          <div className="w-[100%] h-[270px] mt-[40px] flex items-center justify-center">
+            <Video
+              src="https://player.vimeo.com/video/825085390?h=0fd0e9c4c5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              route="https://player.vimeo.com/video/825085390?h=0fd0e9c4c5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            />
+            <Video
+              src="https://player.vimeo.com/video/818001094?h=a33b3c2513&badge=0&autopause=0&player_id=0&app_id=58479/embed"
+              route="https://player.vimeo.com/video/818001094?h=a33b3c2513&badge=0&autopause=0&player_id=0&app_id=58479/embed"
+            />
+          </div>
+          <div className="w-[100%] h-[270px] flex items-center justify-center">
+            <Video
+              src="https://player.vimeo.com/video/818001028?h=b2e4e0bb4c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              route="https://euromoney-demo-ir7q.vercel.app/"
+            />
+            <Video
+              src="https://player.vimeo.com/video/818000952?h=3d65463b57&badge=0&autopause=0&player_id=0&app_id=58479/embed"
+              route="https://epg-report.web.app/"
+            />
+          </div>
         </div>
-        <div className="w-[100%] h-[270px] flex items-center justify-center">
-          <Video
-            src="https://player.vimeo.com/video/818001028?h=b2e4e0bb4c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-            route="https://euromoney-demo-ir7q.vercel.app/"
-          />
-          <Video
-            src="https://player.vimeo.com/video/818000952?h=3d65463b57&badge=0&autopause=0&player_id=0&app_id=58479/embed"
-            route="https://epg-report.web.app/"
-          />
+
+        <div className="w-[100%] h-[100px] flex items-center px-[15%] justify-between">
+          <h1
+            className="text-[#fff] shrink-0 w-[400px] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+            onClick={() => {}}
+          >
+            <a
+              href="https://skyboxes.vercel.app/create"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Biblo Creator
+            </a>
+          </h1>
+          <h1
+            className="text-[#fff] shrink-0 w-[500px] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+            onClick={() => {}}
+          >
+            <a
+              href="https://biblo.mesmr.io/Mesmr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Biblo Platform
+            </a>
+          </h1>
+        </div>
+        <div className="w-[100%] h-[100px] flex items-center px-[15%] justify-between">
+          <h1
+            className="text-[#fff] shrink-0 w-[400px] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+            onClick={() => {}}
+          >
+            <a
+              href="https://burroh.mesmr.io/Burrohaa"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bandr Platform
+            </a>
+          </h1>
+          <h1
+            className="text-[#fff] shrink-0 w-[500px] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+            onClick={() => {}}
+          >
+            <a
+              href="https://staging.willo.inc/VensureHr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Burroh Platform
+            </a>
+          </h1>
         </div>
       </div>
     </>
