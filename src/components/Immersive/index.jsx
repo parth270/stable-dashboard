@@ -54,6 +54,7 @@ const ImmersiveContainer = () => {
         <div className="w-[100%] h-[270px] flex items-center justify-center">
           <Video src="/epg.mp4" route="https://epg-report.web.app/" />
           <Video src="/kubota.mp4" route="https://www.kubota.com/futurecube/" />
+          <Video src="/dilenian.mp4" route="https://dilenian-demo.vercel.app/" />
         </div>
       </div>
     </>
