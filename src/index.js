@@ -25,7 +25,7 @@ import Walk7 from "./routes/walk-7";
 import Walk8 from "./routes/walk-8.jsx";
 import IntroVid from "./routes/Intro-vid";
 import Login from "./components/Login";
-import Admin from './components/Admin/index.jsx'
+import Admin from "./components/Admin/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -97,22 +97,20 @@ const router = createBrowserRouter([
     element: <ImmersiveExperiencePage />,
   },
   {
-    path:"/admin",
-    element:<Admin/>
+    path: "/admin",
+    element: <Admin />,
   },
   {
-    path:"/content",
-    element:<AdminExtra/>
-  }
+    path: "/content",
+    element: <AdminExtra />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <Login>
-      <Loader>
-        <RouterProvider router={router} />
-      </Loader>
-    </Login>
+    <Loader>
+      <RouterProvider router={router} />
+    </Loader>
   </Provider>
 );
