@@ -89,7 +89,7 @@ const Input = ({ id }) => {
     // send the request to the API and set the response for the current message
     try {
       const response = await fetch(
-        "https://b656-3-133-102-91.ngrok-free.app/chatqa_multiple",
+        "https://pdfgptmolotov.ngrok.app/chatqa_multiple",
         requestOptions
       );
       const result = await response.json();

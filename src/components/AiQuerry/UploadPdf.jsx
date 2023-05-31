@@ -52,7 +52,7 @@ const DropZone = ({ change, trans, files, setFiles }) => {
 
     try {
       const response = await fetch(
-        "https://b656-3-133-102-91.ngrok-free.app/analyze_multiple_documents",
+        "https://pdfgptmolotov.ngrok.app/analyze_multiple_documents",
         requestOptions
       );
       const result = await response.json();
