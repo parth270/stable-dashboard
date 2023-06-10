@@ -26,6 +26,7 @@ import Walk8 from "./routes/walk-8.jsx";
 import IntroVid from "./routes/Intro-vid";
 import Login from "./components/Login";
 import Admin from "./components/Admin/index.jsx";
+import Youlearn from './routes/you-learn.jsx'
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,10 @@ const router = createBrowserRouter([
   {
     path: "/content",
     element: <AdminExtra />,
+  },
+  {
+    path: "/you-learn",
+    element: <Youlearn />,
   },
 ]);
 

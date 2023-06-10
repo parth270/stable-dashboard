@@ -119,6 +119,12 @@ const HomeContainer = () => {
             icon="/key.png"
             width={50}
           />
+          <Item
+            title="Youtube-Learn"
+            route="/you-learn"
+            icon="/key.png"
+            width={50}
+          />
         </div>
         <img
           src="/face-1.png"

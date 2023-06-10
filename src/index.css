@@ -45,8 +45,6 @@ body::-webkit-scrollbar-thumb {
   font-family: "Space Grotesk", sans-serif;
 }
 
-
-
 .dropzone {
   flex: 1;
   display: flex;
@@ -65,4 +63,25 @@ body::-webkit-scrollbar-thumb {
 
 .dropzone:focus {
   border-color: #2196f3;
+}
+
+.grady-1 {
+  background: rgb(239, 88, 61);
+  background: linear-gradient(
+    45deg,
+    rgba(239, 88, 61, 1) 35%,
+    rgba(60, 66, 190, 1) 100%
+  );
+  transition-duration: 1s !important;
+}
+
+
+.grady-1:hover {
+  background: rgb(239, 88, 61);
+  background: linear-gradient(
+    45deg,
+    rgba(239, 88, 61, 1) 35%,
+    rgba(60, 66, 190, 1) 100%
+  );
+  transition-duration: 1s !important;
 }
