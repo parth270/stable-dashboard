@@ -141,8 +141,61 @@ const Input = ({ submitted }) => {
   );
 };
 
+const Option = ({ title, stat, ans, i }) => {
+  return (
+    <div className="flex items-center mb-[5px] ">
+      {stat === null && (
+        <div
+          onClick={() => {
+            ans(i);
+          }}
+          className="w-[17px] cursor-pointer  h-[17px] rounded-sm"
+          style={{
+            border: "2px solid #fff",
+          }}
+        ></div>
+      )}
+      {stat === true && (
+        <div className="w-[17px] cursor-pointer bg-[#00ff00]  h-[17px] rounded-sm">
+          <img src="/assets/check.svg" className="w-[]" alt="" />
+        </div>
+      )}
+      {stat === false && (
+        <div className="w-[17px] cursor-pointer bg-[#ff0000]  h-[17px] rounded-sm">
+          <img src="/assets/cross.svg" className="w-[]" alt="" />
+        </div>
+      )}
+      <p className="text-[15px] font-medium fckin text-[#fff] ml-[10px] translate-y-[1px] tracking-wide">
+        {title}
+      </p>
+    </div>
+  );
+};
+
 const Mcqs = ({ data }) => {
   const [curr, setCurr] = useState(0);
+  const [answer, setAnswer] = useState(null);
+  const [correct, setCorrect] = useState(null);
+  const [corrected, setCorrected] = useState();
+  const ans = (e) => {
+    if (answer === null) {
+      const url = "https://pdfgptmolotov.ngrok.app/answer_youtube_quiz";
+
+      const req = new FormData();
+      req.append("user_id", "Parth");
+      req.append("youtube_link", data.youtube_link);
+      req.append("question_number", curr + 1);
+
+      axios.post(url, req).then((e) => {
+        setAnswer(e.data.correct_option);
+        if (e.data.correct_option === e) {
+          setCorrect(true);
+        } else {
+          setCorrect(false);
+        }
+      });
+    }
+  };
 
   return (
     <div
@@ -153,7 +206,38 @@ const Mcqs = ({ data }) => {
         Multiple Questions ({curr + 1}/10) :
       </p>
       <p className="text-[15px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
-        Q.{curr + 1} {data.questions[0].question}
+        Q.{curr + 1} {data.questions[curr].question}
+      </p>
+      <Option
+        title={data.questions[curr].options[0]}
+        stat={answer === null ? null : answer === 0}
+        ans={ans}
+        i={0}
+      />
+      <Option
+        title={data.questions[curr].options[1]}
+        stat={answer === null ? null : answer === 1}
+        ans={ans}
+        i={1}
+      />
+      <Option
+        title={data.questions[curr].options[2]}
+        stat={answer === null ? null : answer === 2}
+        ans={ans}
+        i={2}
+      />
+      <Option
+        title={data.questions[curr].options[3]}
+        stat={answer === null ? null : answer === 3}
+        ans={ans}
+        i={3}
+      />
+      <p className="text-[15px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+        {correct
+          ? "Correct Answer!"
+          : `Wrong Answer! Correct Answer is ${
+              answer === 0 ? "A" : answer === 1 ? "B" : answer === 2 ? "C" : "D"
+            }`}
       </p>
     </div>
   );
@@ -183,7 +267,7 @@ const Content = ({ data }) => {
         clipPath: "inset(0px 50vw 0vh 50vw)",
       }}
       to={{
-        clipPath: false?  "inset(0px 50vw 0vh 50vw)": "inset(0px 0vw 0vh 0vw)",
+        clipPath: false ? "inset(0px 50vw 0vh 50vw)" : "inset(0px 0vw 0vh 0vw)",
         // clipPath: !showed ? "inset(0px 100% 0px 1px)" : "inset(0px 0px 0% 1px)",
       }}
       duration={1.7}
