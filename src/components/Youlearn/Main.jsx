@@ -172,12 +172,10 @@ const Option = ({ title, stat, ans, i }) => {
   );
 };
 
-const Mcqs = ({ data }) => {
-  const [curr, setCurr] = useState(0);
+const Mcqs = ({ data, curr, next, prev }) => {
   const [answer, setAnswer] = useState(null);
   const [correct, setCorrect] = useState(null);
-  const [corrected, setCorrected] = useState();
-  const ans = (e) => {
+  const ans = (event) => {
     if (answer === null) {
       const url = "https://pdfgptmolotov.ngrok.app/answer_youtube_quiz";
 
@@ -188,7 +186,9 @@ const Mcqs = ({ data }) => {
 
       axios.post(url, req).then((e) => {
         setAnswer(e.data.correct_option);
-        if (e.data.correct_option === e) {
+        console.log(e, e.data.correct_option);
+
+        if (Number(e.data.correct_option) === event) {
           setCorrect(true);
         } else {
           setCorrect(false);
@@ -232,13 +232,43 @@ const Mcqs = ({ data }) => {
         ans={ans}
         i={3}
       />
-      <p className="text-[15px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
-        {correct
+      <p className="text-[15px] h-[20px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+        {correct === null
+          ? ""
+          : correct
           ? "Correct Answer!"
           : `Wrong Answer! Correct Answer is ${
               answer === 0 ? "A" : answer === 1 ? "B" : answer === 2 ? "C" : "D"
             }`}
       </p>
+      <div className="w-[100%] h-[50px] flex items-center justify-end">
+        <div
+          onClick={() => {
+            if (curr !== 0) {
+              prev();
+            }
+          }}
+          style={{
+            backgroundColor: curr === 0 ? "#555" : "#222",
+          }}
+          className="w-[120px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+        >
+          Prev
+        </div>
+        <div
+          onClick={() => {
+            if (curr !== 9) {
+              next();
+            }
+          }}
+          style={{
+            backgroundColor: curr === 9 ? "#555" : "#222",
+          }}
+          className="w-[120px] ml-[10px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+        >
+          Next
+        </div>
+      </div>
     </div>
   );
 };
@@ -250,6 +280,8 @@ const Content = ({ data }) => {
   };
   const url = data.youtube_link;
   const videoId = url.split("v=")[1];
+  const [curr, setCurr] = useState(0);
+
   //   {
   //     "correct_option": null,
   //     "options": [
@@ -325,7 +357,126 @@ const Content = ({ data }) => {
             );
           })}
         </div>
-        <Mcqs data={data} />
+        {curr === 0 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 1 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 2 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 3 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 4 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 5 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 6 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 7 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 8 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
+        {curr === 9 && (
+          <Mcqs
+            data={data}
+            curr={curr}
+            next={() => {
+              setCurr(curr + 1);
+            }}
+            prev={() => {
+              setCurr(curr - 1);
+            }}
+          />
+        )}
         <div className="w-[100%] h-[100px]"></div>
       </div>
     </Tween>
