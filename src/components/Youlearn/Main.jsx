@@ -296,7 +296,7 @@ const ShortAnswers = () => {
         }}
       >
         <div className="w-[100%] bg-[#4a4bcc] flex items-center justify-center font-medium text-[15px] text-[#fff]  fckin absolute duration-100 z-10 h-[100%]  cursor-pointer backdrop-blur-xl">
-         Q.1
+          Q.1
         </div>
         <div
           style={{
@@ -322,6 +322,86 @@ const ShortAnswers = () => {
           className="w-[120px] ml-[10px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
         >
           Next
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Chat = ({ data }) => {
+  const [chat, setChat] = useState([]);
+
+  const [input, setInput] = useState("");
+
+  const submit = async () => {
+    if (input !== "") {
+      const url = "https://pdfgptmolotov.ngrok.app/chatqa_multiple";
+
+      const req = new FormData();
+      req.append("user_id", "Parth");
+      req.append("query", input);
+      req.append("file_id", data.file_id);
+      axios.post(url, req).then((e) => {
+        console.log(e.data.answer);
+        setChat([
+          ...chat,
+          {
+            person: false,
+            message: input,
+          },
+          {
+            person: true,
+            message: e.data.answer,
+          },
+        ]);
+        setInput("")
+      });
+    }
+  };
+
+  return (
+    <div className="w-[100%] flex items-center justify-center ">
+      <div
+        className=" bg-[#00000060] border-[3px] border-[#fff] mt-[100px] h-[605px] px-[50px] rounded-[3px]
+            pt-[30px] pb-[30px] backdrop-blur-xl w-[800px] flex-col flex"
+      >
+        <p className="text-[25px] text-center text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+          Chat
+        </p>
+        <div className="w-[100%] h-[100%] overflow-y-auto scroll-bar-cool mb-[30px]">
+          {chat.map((item, i) => {
+            return (
+              <div
+                className="w-[100%] px-[20px] py-[15px] rounded-[2px] min-h-[50px] flex items-center justify-center text-[#fff] font-medium fckin capitalize mb-[10px]"
+                style={{
+                  backgroundColor: item.person ? "#4a4bcc" : "#e4522f",
+                }}
+              >
+                {item.message}
+              </div>
+            );
+          })}
+        </div>
+        <div className="w-[100%] flex items-center justify-between">
+          <input
+            type="text"
+            placeholder="Type your message here"
+            value={input}
+            onChange={(e) => {
+              setInput(e.target.value);
+            }}
+            className="rounded-[5px] px-[10px] text-[15px] font-bold fckin outline-none w-[80%] h-[50px]"
+          />
+          <div
+            onClick={() => {
+              if (input !== "") {
+                submit();
+              }
+            }}
+            className="w-[18%] justify-center text-[17px] cursor-pointer font-medium  text-[#fff] tracking-wide  px-[20px] flex items-center h-[50px] grady-1 rounded-[5px]"
+          >
+            Send
+          </div>
         </div>
       </div>
     </div>
@@ -537,7 +617,7 @@ const Content = ({ data }) => {
           )}
           <ShortAnswers />
         </div>
-
+        <Chat data={data} />
         <div className="w-[100%] h-[100px]"></div>
       </div>
     </Tween>
