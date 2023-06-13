@@ -149,19 +149,19 @@ const Option = ({ title, stat, ans, i }) => {
           onClick={() => {
             ans(i);
           }}
-          className="w-[17px] cursor-pointer  h-[17px] rounded-sm"
+          className="w-[17px] cursor-pointer shrink-0 h-[17px] rounded-sm"
           style={{
             border: "2px solid #fff",
           }}
         ></div>
       )}
       {stat === true && (
-        <div className="w-[17px] cursor-pointer bg-[#00ff00]  h-[17px] rounded-sm">
+        <div className="w-[17px] cursor-pointer shrink-0 bg-[#00ff00]  h-[17px] rounded-sm">
           <img src="/assets/check.svg" className="w-[]" alt="" />
         </div>
       )}
       {stat === false && (
-        <div className="w-[17px] cursor-pointer bg-[#ff0000]  h-[17px] rounded-sm">
+        <div className="w-[17px] cursor-pointer shrink-0 bg-[#ff0000]  h-[17px] rounded-sm">
           <img src="/assets/cross.svg" className="w-[]" alt="" />
         </div>
       )}
@@ -200,38 +200,40 @@ const Mcqs = ({ data, curr, next, prev }) => {
   return (
     <div
       className=" bg-[#00000060] mt-[40px] px-[50px] rounded-[3px]
-   pt-[30px] pb-[30px] backdrop-blur-xl w-[100%]"
+   pt-[30px] h-[425px] flex-col flex justify-center pb-[30px] backdrop-blur-xl w-[48%]"
     >
       <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
         Multiple Questions ({curr + 1}/10) :
       </p>
-      <p className="text-[15px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
-        Q.{curr + 1} {data.questions[curr].question}
-      </p>
-      <Option
-        title={data.questions[curr].options[0]}
-        stat={answer === null ? null : answer === 0}
-        ans={ans}
-        i={0}
-      />
-      <Option
-        title={data.questions[curr].options[1]}
-        stat={answer === null ? null : answer === 1}
-        ans={ans}
-        i={1}
-      />
-      <Option
-        title={data.questions[curr].options[2]}
-        stat={answer === null ? null : answer === 2}
-        ans={ans}
-        i={2}
-      />
-      <Option
-        title={data.questions[curr].options[3]}
-        stat={answer === null ? null : answer === 3}
-        ans={ans}
-        i={3}
-      />
+      <div className="h-[190px] overflow-y-auto scroll-bar-cool">
+        <p className="text-[15px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+          Q.{curr + 1} {data.questions[curr].question}
+        </p>
+        <Option
+          title={data.questions[curr].options[0]}
+          stat={answer === null ? null : answer === 0}
+          ans={ans}
+          i={0}
+        />
+        <Option
+          title={data.questions[curr].options[1]}
+          stat={answer === null ? null : answer === 1}
+          ans={ans}
+          i={1}
+        />
+        <Option
+          title={data.questions[curr].options[2]}
+          stat={answer === null ? null : answer === 2}
+          ans={ans}
+          i={2}
+        />
+        <Option
+          title={data.questions[curr].options[3]}
+          stat={answer === null ? null : answer === 3}
+          ans={ans}
+          i={3}
+        />
+      </div>
       <p className="text-[15px] h-[20px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
         {correct === null
           ? ""
@@ -263,6 +265,59 @@ const Mcqs = ({ data, curr, next, prev }) => {
           }}
           style={{
             backgroundColor: curr === 9 ? "#555" : "#222",
+          }}
+          className="w-[120px] ml-[10px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+        >
+          Next
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ShortAnswers = () => {
+  const [clicked, setClicked] = useState(false);
+
+  return (
+    <div
+      className=" bg-[#00000060] mt-[40px] h-[425px] px-[50px] rounded-[3px]
+                pt-[30px] pb-[30px] backdrop-blur-xl w-[48%] flex-col flex"
+    >
+      <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+        Short Answer Questions ({1}/10) :
+      </p>
+      <div
+        className="w-[100%] relative  duration-200  mb-[20px]  h-[100%]"
+        onClick={() => {
+          setClicked(!clicked);
+        }}
+        style={{
+          transform: clicked ? " rotateX(180deg)" : " rotateX(0deg)",
+        }}
+      >
+        <div className="w-[100%] bg-[#4a4bcc] flex items-center justify-center font-medium text-[15px] text-[#fff]  fckin absolute duration-100 z-10 h-[100%]  cursor-pointer backdrop-blur-xl">
+         Q.1
+        </div>
+        <div
+          style={{
+            transform: "rotateX(180deg) translateZ(1px)",
+          }}
+          className="w-[100%] absolute bg-[#4a4bccs] flex items-center justify-center font-medium text-[15px] text-[#fff] fckin duration-100 z-10 h-[100%]  cursor-pointer backdrop-blur-xl"
+        >
+          A.1
+        </div>
+      </div>
+      <div className="w-[100%] shrink-0 h-[50px] flex items-center justify-end">
+        <div
+          onClick={() => {}}
+          className="w-[120px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+        >
+          Prev
+        </div>
+        <div
+          onClick={() => {}}
+          style={{
+            backgroundColor: false ? "#555" : "#222",
           }}
           className="w-[120px] ml-[10px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
         >
@@ -309,7 +364,7 @@ const Content = ({ data }) => {
         <h1 className="w-[100%] text-[40px] mb-[30px] text-[#fff] tracking-wide font-bold fckin pt-[70px]  text-center">
           {data.title}
         </h1>
-        <div className="flex justify-between" >
+        <div className="flex justify-between">
           <div className="w-[48%] h-[400px] relative">
             <div className="w-[100%] flex items-center justify-center h-[100%] bg-[#00000060] backdrop-blur-xl rounded-sm absolute z-10">
               <svg
@@ -336,7 +391,7 @@ const Content = ({ data }) => {
           </div>
           <div
             className=" bg-[#00000060] px-[50px] rounded-[3px]
-       pt-[30px] pb-[30px] backdrop-blur-xl w-[48%] h-[400px] overflow-y-auto"
+       pt-[30px] pb-[30px] backdrop-blur-xl w-[48%] h-[400px] overflow-y-auto  scroll-bar-cool"
           >
             <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
               Summary:
@@ -359,127 +414,130 @@ const Content = ({ data }) => {
             })}
           </div>
         </div>
+        <div className="w-[100%] mt-[40px] h-[400px] flex items-center justify-between">
+          {curr === 0 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 1 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 2 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 3 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 4 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 5 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 6 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 7 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 8 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          {curr === 9 && (
+            <Mcqs
+              data={data}
+              curr={curr}
+              next={() => {
+                setCurr(curr + 1);
+              }}
+              prev={() => {
+                setCurr(curr - 1);
+              }}
+            />
+          )}
+          <ShortAnswers />
+        </div>
 
-        {curr === 0 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 1 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 2 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 3 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 4 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 5 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 6 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 7 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 8 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
-        {curr === 9 && (
-          <Mcqs
-            data={data}
-            curr={curr}
-            next={() => {
-              setCurr(curr + 1);
-            }}
-            prev={() => {
-              setCurr(curr - 1);
-            }}
-          />
-        )}
         <div className="w-[100%] h-[100px]"></div>
       </div>
     </Tween>
