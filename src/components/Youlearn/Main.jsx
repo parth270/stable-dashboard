@@ -32,7 +32,7 @@ const Loader = () => {
   );
 };
 
-const Input = ({ submitted }) => {
+const Input = ({ submitted, shorts }) => {
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState("");
   const [err, setErr] = useState("");
@@ -53,6 +53,8 @@ const Input = ({ submitted }) => {
       req.append("number_of_questions", 10);
       const url = "https://pdfgptmolotov.ngrok.app/generate_youtube_quiz";
       try {
+        shorts(input);
+
         axios.post(url, req).then((e) => {
           if (e.data.message) {
             setErr(e.data.message);
@@ -292,8 +294,8 @@ const FlipCard = ({ front, back }) => {
   );
 };
 
-const ShortAnswers = () => {
-  const [shorts, setShorts] = useState([
+const ShortAnswers = ({shorts}) => {
+  const [Shorts, setShorts] = useState([
     {
       question: "Q.1 Why is it not connected to the Backend?",
       answer: "Vatsal is making some changes, after that it will be integrated",
@@ -331,13 +333,13 @@ const ShortAnswers = () => {
         return (
           <FlipCard
             front={
-              <div className="w-[100%] bg-[#7857fe] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
+              <div className="w-[100%] px-[20px] overflow-hidden bg-[#7857fe] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
                 {" "}
                 {item.question}
               </div>
             }
             back={
-              <div className="w-[100%] bg-[#f25737] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
+              <div className="w-[100%]  px-[20px] overflow-hidden bg-[#f25737] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
                 {" "}
                 {item.answer}
               </div>
@@ -458,7 +460,7 @@ const Chat = ({ data }) => {
   );
 };
 
-const Content = ({ data }) => {
+const Content = ({ data ,shorts}) => {
   const opts = {
     height: "400",
     width: "100%",
@@ -665,7 +667,7 @@ const Content = ({ data }) => {
               }}
             />
           )}
-          <ShortAnswers />
+          <ShortAnswers shorts={shorts} />
         </div>
         <Chat data={data} />
         <div className="w-[100%] h-[100px]"></div>
@@ -676,7 +678,20 @@ const Content = ({ data }) => {
 
 const App = () => {
   const [data, setData] = useState(null);
+  const [shortAnswers,setAnswers] = useState({});
   console.log(data);
+
+  const shorts = (input) => {
+    const req = new FormData();
+    req.append("user_id", "Parth");
+    req.append("youtube_link", input);
+    req.append("num_of_question", 5);
+    const url = "https://pdfgptmolotov.ngrok.app/generate_text_questions";
+    axios.post(url,req).then((e)=>{
+      console.log(e);
+      setAnswers(e.data.questions);
+    })
+  };
 
   return (
     <div className="w-[100%] h-[100vh]">
@@ -685,9 +700,10 @@ const App = () => {
           submitted={(e) => {
             setData(e);
           }}
+          shorts={shorts}
         />
       ) : (
-        <Content data={data} />
+        <Content data={data} shorts={shortAnswers} />
       )}
     </div>
   );
