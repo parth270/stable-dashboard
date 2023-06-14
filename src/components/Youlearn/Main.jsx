@@ -331,13 +331,13 @@ const ShortAnswers = () => {
         return (
           <FlipCard
             front={
-              <div className="w-[100%] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
+              <div className="w-[100%] bg-[#7857fe] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
                 {" "}
                 {item.question}
               </div>
             }
             back={
-              <div className="w-[100%] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
+              <div className="w-[100%] bg-[#f25737] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
                 {" "}
                 {item.answer}
               </div>
