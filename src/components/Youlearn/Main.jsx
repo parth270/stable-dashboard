@@ -275,9 +275,47 @@ const Mcqs = ({ data, curr, next, prev }) => {
   );
 };
 
-const ShortAnswers = () => {
+const FlipCard = ({ front, back }) => {
   const [clicked, setClicked] = useState(false);
+  return (
+    <div
+      className="flip-card cursor-pointer"
+      onClick={() => {
+        setClicked(!clicked);
+      }}
+    >
+      <div className={`flip-card-inner ${clicked ? "rota" : ""}`}>
+        <div className="flip-card-front">{front}</div>
+        <div className="flip-card-back">{back}</div>
+      </div>
+    </div>
+  );
+};
 
+const ShortAnswers = () => {
+  const [shorts, setShorts] = useState([
+    {
+      question: "Q.1 Why is it not connected to the Backend?",
+      answer: "Vatsal is making some changes, after that it will be integrated",
+    },
+    {
+      question: "Q.2 What is your name?",
+      answer: "My name is Parth",
+    },
+    {
+      question: "Q.3 What is your name?",
+      answer: "My name is Parth",
+    },
+    {
+      question: "Q.4 What is your name?",
+      answer: "My name is Parth",
+    },
+    {
+      question: "Q.5 What is your name?",
+      answer: "My name is Parth",
+    },
+  ]);
+  const [curr, setCurr] = useState(0);
   return (
     <div
       className=" bg-[#00000060] mt-[40px] h-[425px] px-[50px] rounded-[3px]
@@ -286,38 +324,50 @@ const ShortAnswers = () => {
       <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
         Short Answer Questions ({1}/10) :
       </p>
-      <div
-        className="w-[100%] relative  duration-200  mb-[20px]  h-[100%]"
-        onClick={() => {
-          setClicked(!clicked);
-        }}
-        style={{
-          transform: clicked ? " rotateX(180deg)" : " rotateX(0deg)",
-        }}
-      >
-        <div className="w-[100%] bg-[#4a4bcc] flex items-center justify-center font-medium text-[15px] text-[#fff]  fckin absolute duration-100 z-10 h-[100%]  cursor-pointer backdrop-blur-xl">
-          Q.1
-        </div>
-        <div
-          style={{
-            transform: "rotateX(180deg) translateZ(1px)",
-          }}
-          className="w-[100%] absolute bg-[#4a4bccs] flex items-center justify-center font-medium text-[15px] text-[#fff] fckin duration-100 z-10 h-[100%]  cursor-pointer backdrop-blur-xl"
-        >
-          A.1
-        </div>
-      </div>
+      {shorts.map((item, i) => {
+        if (curr !== i) {
+          return <React.Fragment key={i} />;
+        }
+        return (
+          <FlipCard
+            front={
+              <div className="w-[100%] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
+                {" "}
+                {item.question}
+              </div>
+            }
+            back={
+              <div className="w-[100%] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
+                {" "}
+                {item.answer}
+              </div>
+            }
+            key={i}
+          />
+        );
+      })}
       <div className="w-[100%] shrink-0 h-[50px] flex items-center justify-end">
         <div
-          onClick={() => {}}
+          onClick={() => {
+            if (curr !== 0) {
+              setCurr(curr - 1);
+            }
+          }}
           className="w-[120px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+          style={{
+            backgroundColor: curr === 0 ? "#555" : "#222",
+          }}
         >
           Prev
         </div>
         <div
-          onClick={() => {}}
+          onClick={() => {
+            if (curr !== 4) {
+              setCurr(curr + 1);
+            }
+          }}
           style={{
-            backgroundColor: false ? "#555" : "#222",
+            backgroundColor: curr === 4 ? "#555" : "#222",
           }}
           className="w-[120px] ml-[10px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
         >
@@ -354,7 +404,7 @@ const Chat = ({ data }) => {
             message: e.data.answer,
           },
         ]);
-        setInput("")
+        setInput("");
       });
     }
   };
