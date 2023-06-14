@@ -324,7 +324,7 @@ const ShortAnswers = ({shorts}) => {
                 pt-[30px] pb-[30px] backdrop-blur-xl w-[48%] flex-col flex"
     >
       <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
-        Short Answer Questions ({1}/10) :
+        Short Answer Questions ({curr+1}/5) :
       </p>
       {shorts.map((item, i) => {
         if (curr !== i) {
