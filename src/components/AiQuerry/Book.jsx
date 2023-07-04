@@ -40,7 +40,7 @@ const Book = ({ sizes, file }) => {
                 }}
                 className="bg-[#fff] flex items-center justify-center overflow-hidden"
               >
-                {/* <span className="fckin text-[20px] font-bold">
+                {/* <span className="good-font text-[20px] font-bold">
                   Page-{i + 1}
                 </span> */}
                 {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
@@ -129,7 +129,7 @@ const FlipBook = ({ files }) => {
           ref={ref}
           className="w-[100%] h-[100%]  backdrop-blur-[5px] bg-[#ffffff60] border-[#fff] rounded-[5px] flex items-center justify-center "
         >
-          <p className="text-[30px] font-bold fckin text-[#fff] capitalize tracking-sm">
+          <p className="text-[30px] font-bold good-font text-[#fff] capitalize tracking-sm">
             Upload a PDF file Please
           </p>
         </div>

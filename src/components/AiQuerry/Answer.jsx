@@ -42,7 +42,7 @@ const AnswerHolder = ({ answer, close }) => {
             {answer.loading ? (
               <Loader />
             ) : (
-              <p className="text-[16px] font-bold fckin text-[#000] tracking-wide">
+              <p className="text-[16px] font-bold good-font text-[#000] tracking-wide">
                 {answer.text}
               </p>
             )}
@@ -115,7 +115,7 @@ const Input = ({ id }) => {
       <div className="w-[400px] flex items-center h-[50px] absolute bottom-[20px]  bg-[#fff] rounded-[2px] px-[10px] py-[4px] z-50">
         <input
           type="text"
-          className="w-[100%] h-[100%] outline-none fckin text-[14px] font-medium"
+          className="w-[100%] h-[100%] outline-none good-font text-[14px] font-medium"
           placeholder="Ask Questions!"
           onKeyDown={(event) => {
             if (event.key === "Enter") {

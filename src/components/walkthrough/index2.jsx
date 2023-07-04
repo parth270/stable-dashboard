@@ -24,7 +24,7 @@ const Index2 = () => {
     >
       <Left id={2} />
       <Right id={2} />
-      <h1 className="fckin font-medium text-[#fff] text-[44px] w-[500px]">
+      <h1 className="good-font font-medium text-[#fff] text-[44px] w-[500px]">
         We build together, Every step of the way
       </h1>
       <div

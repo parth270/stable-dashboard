@@ -35,7 +35,7 @@ const DropDown = ({ change, curr }) => {
       onClick={() => {
         setClicked(true);
       }}
-      className="w-[200px] px-[15px] h-[45px] flex items-center tracking-wide cursor-pointer justify-center fckin bg-[#444] mt-[10px] rounded-sm relative font-medium text-[#fff] "
+      className="w-[200px] px-[15px] h-[45px] flex items-center tracking-wide cursor-pointer justify-center good-font bg-[#444] mt-[10px] rounded-sm relative font-medium text-[#fff] "
     >
       {data[curr].title.substring(0, 12)}
       {data[curr].title.length > 11 && "..."}

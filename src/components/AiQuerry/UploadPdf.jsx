@@ -109,7 +109,7 @@ const DropZone = ({ change, trans, files, setFiles }) => {
             }) => (
               <div
                 {...getRootProps()}
-                className="cursor-pointer w-[600px] h-[380px] rounded-[5px] flex items-center justify-center duration-100 bg-[#ffffff60] backdrop-blur-[10px] fckin"
+                className="cursor-pointer w-[600px] h-[380px] rounded-[5px] flex items-center justify-center duration-100 bg-[#ffffff60] backdrop-blur-[10px] good-font"
                 style={{
                   border: dropzoneActive
                     ? "2px dashed #fff"
@@ -118,7 +118,7 @@ const DropZone = ({ change, trans, files, setFiles }) => {
               >
                 {/* move input element outside of the text container */}
                 <input {...getInputProps()} />
-                <p className="fckin text-[#fff] font-bold text-[24px]">
+                <p className="good-font text-[#fff] font-bold text-[24px]">
                   {text}
                 </p>
               </div>

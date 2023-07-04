@@ -25,7 +25,7 @@ const Model = ({ title, content }) => {
         >
           <div className="w-[100%] h-[100%] pl-[100px] flex justify-between items-center ">
             <div className="w-[55%] py-[25px] rounded-3xl h-[550px] backdrop-blur-xl bg-[#00000060] flex flex-col justify-center px-[40px]">
-              <h1 className="text-[#fff] fckin  font-medium text-[35px] mb-[10px]">
+              <h1 className="text-[#fff] good-font  font-medium text-[35px] mb-[10px]">
                 {title}:
               </h1>
               <div className="w-[100%] overflow-y-auto scroll-bar-cool h-[400px] pr-[50px]">
@@ -33,7 +33,7 @@ const Model = ({ title, content }) => {
                   return (
                     <li
                       key={i}
-                      className="text-[#fff] fckin list-inside text-[18px] mt-[10px] font-medium"
+                      className="text-[#fff] good-font list-inside text-[18px] mt-[10px] font-medium"
                     >
                       {item}
                     </li>

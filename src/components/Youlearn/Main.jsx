@@ -88,7 +88,7 @@ const Input = ({ submitted, shorts }) => {
     >
       <div className="w-[100%] h-[100vh] flex items-center justify-center">
         <div className="px-[10%] items-center pb-[30px] flex-col w-[1000px] min-h-[200px] rounded-[5px] bg-[#ffffff40] py-[20px] backdrop-blur-xl">
-          <h1 className="text-[40px] fckin font-medium text-center text-[#fff] tracking-wide">
+          <h1 className="text-[40px] good-font font-medium text-center text-[#fff] tracking-wide">
             Mesmr Learning: YouTube Style
           </h1>
           <div className="w-[100%] mt-[20px] px-[20px] flex items-center h-[50px] bg-[#fff] rounded-[5px]">
@@ -106,7 +106,7 @@ const Input = ({ submitted, shorts }) => {
                 setInput(e.target.value);
               }}
               placeholder="Youtube Link"
-              className="w-[100%] px-[10px] font-medium tracking-wide fckin h-[100%] outline-none"
+              className="w-[100%] px-[10px] font-medium tracking-wide good-font h-[100%] outline-none"
             />
             <img src="/play.png" className=" w-[15px] cursor-pointer" alt="" />
           </div>
@@ -167,7 +167,7 @@ const Option = ({ title, stat, ans, i }) => {
           <img src="/assets/cross.svg" className="w-[]" alt="" />
         </div>
       )}
-      <p className="text-[15px] font-medium fckin text-[#fff] ml-[10px] translate-y-[1px] tracking-wide">
+      <p className="text-[15px] font-medium good-font text-[#fff] ml-[10px] translate-y-[1px] tracking-wide">
         {title}
       </p>
     </div>
@@ -204,11 +204,11 @@ const Mcqs = ({ data, curr, next, prev }) => {
       className=" bg-[#00000060] mt-[40px] px-[50px] rounded-[3px]
    pt-[30px] h-[425px] flex-col flex justify-center pb-[30px] backdrop-blur-xl w-[48%]"
     >
-      <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+      <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide good-font font-medium ">
         Multiple Questions ({curr + 1}/10) :
       </p>
       <div className="h-[190px] overflow-y-auto scroll-bar-cool">
-        <p className="text-[15px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+        <p className="text-[15px] text-[#fff] mb-[10px] tracking-wide good-font font-medium ">
           Q.{curr + 1} {data.questions[curr].question}
         </p>
         <Option
@@ -236,7 +236,7 @@ const Mcqs = ({ data, curr, next, prev }) => {
           i={3}
         />
       </div>
-      <p className="text-[15px] h-[20px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+      <p className="text-[15px] h-[20px] text-[#fff] mb-[10px] tracking-wide good-font font-medium ">
         {correct === null
           ? ""
           : correct
@@ -255,7 +255,7 @@ const Mcqs = ({ data, curr, next, prev }) => {
           style={{
             backgroundColor: curr === 0 ? "#555" : "#222",
           }}
-          className="w-[120px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+          className="w-[120px] flex items-center justify-center font-medium good-font tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
         >
           Prev
         </div>
@@ -268,7 +268,7 @@ const Mcqs = ({ data, curr, next, prev }) => {
           style={{
             backgroundColor: curr === 9 ? "#555" : "#222",
           }}
-          className="w-[120px] ml-[10px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+          className="w-[120px] ml-[10px] flex items-center justify-center font-medium good-font tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
         >
           Next
         </div>
@@ -323,7 +323,7 @@ const ShortAnswers = ({shorts}) => {
       className=" bg-[#00000060] mt-[40px] h-[425px] px-[50px] rounded-[3px]
                 pt-[30px] pb-[30px] backdrop-blur-xl w-[48%] flex-col flex"
     >
-      <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+      <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide good-font font-medium ">
         Short Answer Questions ({curr+1}/5) :
       </p>
       {shorts.map((item, i) => {
@@ -333,13 +333,13 @@ const ShortAnswers = ({shorts}) => {
         return (
           <FlipCard
             front={
-              <div className="w-[100%] px-[20px] overflow-hidden bg-[#7857fe] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
+              <div className="w-[100%] px-[20px] overflow-hidden bg-[#7857fe] h-[100%] flex items-center justify-center text-[15px] good-font text-[#fff] font-medium">
                 {" "}
                 {item.question}
               </div>
             }
             back={
-              <div className="w-[100%]  px-[20px] overflow-hidden bg-[#f25737] h-[100%] flex items-center justify-center text-[15px] fckin text-[#fff] font-medium">
+              <div className="w-[100%]  px-[20px] overflow-hidden bg-[#f25737] h-[100%] flex items-center justify-center text-[15px] good-font text-[#fff] font-medium">
                 {" "}
                 {item.answer}
               </div>
@@ -355,7 +355,7 @@ const ShortAnswers = ({shorts}) => {
               setCurr(curr - 1);
             }
           }}
-          className="w-[120px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+          className="w-[120px] flex items-center justify-center font-medium good-font tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
           style={{
             backgroundColor: curr === 0 ? "#555" : "#222",
           }}
@@ -371,7 +371,7 @@ const ShortAnswers = ({shorts}) => {
           style={{
             backgroundColor: curr === 4 ? "#555" : "#222",
           }}
-          className="w-[120px] ml-[10px] flex items-center justify-center font-medium fckin tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
+          className="w-[120px] ml-[10px] flex items-center justify-center font-medium good-font tracking-wide rounded-sm cursor-pointer h-[100%]  text-[#fff]"
         >
           Next
         </div>
@@ -417,14 +417,14 @@ const Chat = ({ data }) => {
         className=" bg-[#00000060] border-[3px] border-[#fff] mt-[100px] h-[605px] px-[50px] rounded-[3px]
             pt-[30px] pb-[30px] backdrop-blur-xl w-[800px] flex-col flex"
       >
-        <p className="text-[25px] text-center text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+        <p className="text-[25px] text-center text-[#fff] mb-[10px] tracking-wide good-font font-medium ">
           Chat
         </p>
         <div className="w-[100%] h-[100%] overflow-y-auto scroll-bar-cool mb-[30px]">
           {chat.map((item, i) => {
             return (
               <div
-                className="w-[100%] px-[20px] py-[15px] rounded-[2px] min-h-[50px] flex items-center justify-center text-[#fff] font-medium fckin capitalize mb-[10px]"
+                className="w-[100%] px-[20px] py-[15px] rounded-[2px] min-h-[50px] flex items-center justify-center text-[#fff] font-medium good-font capitalize mb-[10px]"
                 style={{
                   backgroundColor: item.person ? "#4a4bcc" : "#e4522f",
                 }}
@@ -442,7 +442,7 @@ const Chat = ({ data }) => {
             onChange={(e) => {
               setInput(e.target.value);
             }}
-            className="rounded-[5px] px-[10px] text-[15px] font-bold fckin outline-none w-[80%] h-[50px]"
+            className="rounded-[5px] px-[10px] text-[15px] font-bold good-font outline-none w-[80%] h-[50px]"
           />
           <div
             onClick={() => {
@@ -493,7 +493,7 @@ const Content = ({ data ,shorts}) => {
       ease={Power4.easeInOut}
     >
       <div className="w-[100%] overflow-y-auto h-[100vh] px-[100px] scroll-bar-cool">
-        <h1 className="w-[100%] text-[40px] mb-[30px] text-[#fff] tracking-wide font-bold fckin pt-[70px]  text-center">
+        <h1 className="w-[100%] text-[40px] mb-[30px] text-[#fff] tracking-wide font-bold good-font pt-[70px]  text-center">
           {data.title}
         </h1>
         <div className="flex justify-between">
@@ -525,19 +525,19 @@ const Content = ({ data ,shorts}) => {
             className=" bg-[#00000060] px-[50px] rounded-[3px]
        pt-[30px] pb-[30px] backdrop-blur-xl w-[48%] h-[400px] overflow-y-auto  scroll-bar-cool"
           >
-            <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+            <p className="text-[25px] text-[#fff] mb-[10px] tracking-wide good-font font-medium ">
               Summary:
             </p>
-            <p className="text-[15px] text-[#fff] tracking-wide fckin font-medium ">
+            <p className="text-[15px] text-[#fff] tracking-wide good-font font-medium ">
               {data.summary}
             </p>
-            <p className="text-[25px] mt-[30px] text-[#fff] mb-[10px] tracking-wide fckin font-medium ">
+            <p className="text-[25px] mt-[30px] text-[#fff] mb-[10px] tracking-wide good-font font-medium ">
               Notes:
             </p>
             {data.important_points.map((item, i) => {
               return (
                 <p
-                  className="text-[15px] flex mb-[5px] text-[#fff] tracking-wide fckin font-medium "
+                  className="text-[15px] flex mb-[5px] text-[#fff] tracking-wide good-font font-medium "
                   key={i}
                 >
                   <span className="mr-[5px]">•</span> <span>{item}</span>

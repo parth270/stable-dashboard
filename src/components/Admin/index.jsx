@@ -44,7 +44,7 @@ const Admin = () => {
       )}
       <button
         onClick={removeFile(files)}
-        className="absolute top-[0px] right-[0px] w-[30px] h-[30px] text-[#fff] bg-[#444] flex items-center justify-center p-[1px] fckin text-[13px] font-bold tracking-wide rounded-sm"
+        className="absolute top-[0px] right-[0px] w-[30px] h-[30px] text-[#fff] bg-[#444] flex items-center justify-center p-[1px] good-font text-[13px] font-bold tracking-wide rounded-sm"
       >
         <img src="/Cross.svg" alt="" />
       </button>
@@ -125,7 +125,7 @@ const Admin = () => {
         />
       </div>
       <div className="w-[500px]">
-        <p className="text-[20px] font-bold fckin">
+        <p className="text-[20px] font-bold good-font">
           Please drop or{" "}
           <span
             className="hover:underline cursor-pointer text-[#ff0000]"
@@ -141,7 +141,7 @@ const Admin = () => {
           onChange={(e) => {
             setInput(e.target.value);
           }}
-          className="w-[100%] h-[50px] border-[#000] border-[3px] mt-[15px] px-[15px] text-[20px] font-bold fckin"
+          className="w-[100%] h-[50px] border-[#000] border-[3px] mt-[15px] px-[15px] text-[20px] font-bold good-font"
         /> */}
         <section className="container">
           <div
@@ -197,14 +197,14 @@ const Admin = () => {
             //   router("/");
             // }
           }}
-          className=" text-[20px] font-bold fckin text-[#fff] h-[55px] w-[100%] bg-[#000] mt-[14px]"
+          className=" text-[20px] font-bold good-font text-[#fff] h-[55px] w-[100%] bg-[#000] mt-[14px]"
         >
           Submit
         </button>
       </div>
       <div className="w-[1px] h-[100%] boder-[#000] border-dashed border-[1px] "></div>
       <div className="w-[500px] h-[500px] flex flex-col justify-center">
-        <p className="text-[20px] font-bold fckin mb-[12px]">
+        <p className="text-[20px] font-bold good-font mb-[12px]">
           {curr === 0 ? "Image" : "Video"} Preview
         </p>
         <div className="w-[500px] h-[350px] ">{files && thumbs}</div>

@@ -30,14 +30,14 @@ const Item = ({ title, route, icon, width, height }) => {
   //         }}
   //       />
   //     </div>
-  //     <h4 className="text-[18px] fckin text-center font-medium tracking-wider text-[#75FB8E] mt-[6px]">
+  //     <h4 className="text-[18px] good-font text-center font-medium tracking-wider text-[#75FB8E] mt-[6px]">
   //       {title}
   //     </h4>
   //   </div>
   // );
   return (
     <h1
-      className="text-[#fff] shrink-0 w-[100%] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center fckin "
+      className="text-[#fff] shrink-0 w-[100%] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center good-font "
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
@@ -82,7 +82,7 @@ const HomeContainer = () => {
         backgroundSize: "cover",
       }}
     >
-      <h1 className="text-[#fff] shrink-0 w-[100%] text-[50px] h-[100px] flex items-center pl-[200px] fckin font-semibold">
+      <h1 className="text-[#fff] shrink-0 w-[100%] text-[50px] h-[100px] flex items-center pl-[200px] good-font font-semibold">
         Enhanced report Features
       </h1>
       <div className=" h-[100%] w-[100%] bg-[#00000090]  flex relative">

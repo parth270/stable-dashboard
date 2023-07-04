@@ -6,7 +6,7 @@ const Item = ({ src, title }) => {
   return (
     <div className="w-[250px] rounded-lg h-[190px] flex flex-col mr-[40px] px-[20px] py-[30px] bg-[#0f0f0f] ">
       <img className="w-[70px] object-contain" src={src} alt="" />
-      <h3 className="fckin text-[17px] font-medium text-[#fff] mt-auto tracking-wide">
+      <h3 className="good-font text-[17px] font-medium text-[#fff] mt-auto tracking-wide">
         {title}
       </h3>
     </div>
@@ -30,7 +30,7 @@ const Index2 = () => {
         <Right id={3} color={"#000"} />
         <img src="/nav-logo.png" className="w-[200px] object-contain" alt="" />
       </div>
-      <h1 className="fckin font-medium text-[#fff] text-[44px] w-[500px]">
+      <h1 className="good-font font-medium text-[#fff] text-[44px] w-[500px]">
         Solutions
       </h1>
       <div

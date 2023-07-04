@@ -24,7 +24,7 @@ const Index1 = () => {
     <div className="w-[100%] h-[100vh] flex flex-col justify-center  relative   ">
       <Left id={0} />
       <Right id={0} />
-      {/* <h1 className="fckin font-medium absolute top-[41px] left-[150px] text-[#fff] whitespace-nowrap text-[44px] w-[500px]">
+      {/* <h1 className="good-font font-medium absolute top-[41px] left-[150px] text-[#fff] whitespace-nowrap text-[44px] w-[500px]">
         The Ecosystem of Solutions
       </h1> */}
       <video
