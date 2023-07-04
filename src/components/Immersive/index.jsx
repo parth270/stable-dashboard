@@ -29,9 +29,10 @@ const Video1 = ({ src, route, extraRoute, extraName }) => {
   return (
     <div className="relative">
       <a href={route} target="_blank">
-        <Suspense fallback={<Loader />}>
+        {/* <Suspense fallback={<Loader />}>
           <Vid1 src={src} />
-        </Suspense>
+        </Suspense> */}
+        <img src={src} className="w-[400px] mr-[40px]" alt="" />
       </a>
       {extraRoute && (
         <a
@@ -82,22 +83,23 @@ const ImmersiveContainer = () => {
         </div>
         <div className="w-[100%] h-[270px] flex items-center justify-center">
           <Video1
-            src="https://connector.eagle3dstreaming.com/v5/nic/WhatsOnDubai/Nirvana"
-            route="https://epg-report.web.app/"
+            src="/whatson.png"
+            route="https://connector.eagle3dstreaming.com/v5/nic/WhatsOnDubai/Nirvana"
           />
           <Video1
-            src="https://connector.eagle3dstreaming.com/v5/nic/Nirvana/Nirvana"
-            route="https://epg-report.web.app/"
+            src="/nirvana.png"
+            route="https://connector.eagle3dstreaming.com/v5/nic/Nirvana/Nirvana"
           />
-          <div className="w-[450px] flex items-center shrink-0 h-[270px]" >
-            <a
-              href={"https://9-yards-dashboard.vercel.app/"}
-              className="text-[#fff] hover:underline left-0 h-[20px] flex items-center font-medium  ml-[10px]"
-              target="_blank"
-            >
-              9-yards
-            </a>
-          </div>
+          <Video1
+            src="/9-yards.png"
+            route="https://9-yards-dashboard.vercel.app/"
+          />
+        </div>
+        <div className="w-[100%] h-[270px] flex items-center justify-center">
+          <Video1
+            src="/tanmia.png"
+            route="https://portal.furioos.com/application/Lqvj5GB8B9HGLeirX"
+          />
         </div>
       </div>
     </>
