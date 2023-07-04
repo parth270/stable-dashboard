@@ -92,7 +92,8 @@ const ImmersiveContainer = () => {
           />
           <Video1
             src="/9-yards.png"
-            route="https://9-yards-dashboard.vercel.app/"
+            route="https://connector.eagle3dstreaming.com/v5/nic/Nine_Yards/Nirvana"
+            
           />
         </div>
         <div className="w-[100%] h-[270px] flex items-center justify-center">
