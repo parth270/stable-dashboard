@@ -120,7 +120,7 @@ const HomeContainer = () => {
             width={50}
           />
           <Item
-            title="Youtube-Learn"
+            title="Assisted Video Learning"
             route="/you-learn"
             icon="/key.png"
             width={50}

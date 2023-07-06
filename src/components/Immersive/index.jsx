@@ -100,7 +100,7 @@ const ImmersiveContainer = () => {
           <Video1
             src="/tanmia.png"
             // route="https://portal.furioos.com/application/Lqvj5GB8B9HGLeirX"
-            route="https://tanmia-dashboard.vercel.app/"
+            route="https://mantia.vercel.app/"
           />
         </div>
       </div>

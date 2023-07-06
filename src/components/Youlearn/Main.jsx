@@ -90,7 +90,7 @@ const Input = ({ submitted, shorts }) => {
       <div className="w-[100%] h-[100vh] flex items-center justify-center">
         <div className="px-[10%] items-center pb-[30px] flex-col w-[1000px] min-h-[200px] rounded-[5px] bg-[#ffffff40] py-[20px] backdrop-blur-xl">
           <h1 className="text-[40px] good-font font-medium text-center text-[#fff] tracking-wide">
-            Mesmr Learning: YouTube Style
+            Mesmr Learning
           </h1>
           <div className="w-[100%] mt-[20px] px-[20px] flex items-center h-[50px] bg-[#fff] rounded-[5px]">
             <input
