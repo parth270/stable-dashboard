@@ -62,7 +62,6 @@ const Admin = () => {
     [files]
   );
 
-
   function convertBlobToBase64(blobFile) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();

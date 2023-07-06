@@ -99,7 +99,8 @@ const ImmersiveContainer = () => {
         <div className="w-[100%] h-[270px] flex items-center justify-center">
           <Video1
             src="/tanmia.png"
-            route="https://portal.furioos.com/application/Lqvj5GB8B9HGLeirX"
+            // route="https://portal.furioos.com/application/Lqvj5GB8B9HGLeirX"
+            route="https://tanmia-dashboard.vercel.app/"
           />
         </div>
       </div>

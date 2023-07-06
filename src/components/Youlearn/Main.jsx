@@ -69,6 +69,7 @@ const Input = ({ submitted, shorts }) => {
           console.log(e);
         });
       } catch (err) {
+        console.log(err);
         setLoading(false);
       }
     }
