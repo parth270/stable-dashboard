@@ -13,6 +13,7 @@ import NarratedPage from "./routes/narrated";
 import VideoDrivenPage from "./routes/video-driven";
 import AvatarsPage from "./routes/avatars";
 import ImmersiveExperiencePage from "./routes/immersive-experience";
+import WebglPage from "./routes/immersive-webgl.jsx";
 import AdminExtra from "./routes/admin.jsx";
 import IntroPage from "./routes/Intro";
 import Walk1 from "./routes/walk-1";
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
   {
     path: "/narrated",
     element: <NarratedPage />,
+  },
+  {
+    path: "/webgl-immersive",
+    element: <WebglPage />,
   },
   {
     path: "/video-driven",

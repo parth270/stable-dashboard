@@ -37,7 +37,7 @@ const Item = ({ title, route, icon, width, height }) => {
   // );
   return (
     <h1
-      className="text-[#fff] shrink-0 w-[100%] hover:text-[#43d2db] mt-[20px] text-[36px] hover:underline cursor-pointer flex items-center good-font "
+      className="text-[#fff] shrink-0 w-[100%] hover:text-[#43d2db] mt-[20px] text-[32px] hover:underline cursor-pointer flex items-center good-font "
       onClick={() => {
         dispatch(setLoading(true));
         setTimeout(() => {
@@ -122,6 +122,12 @@ const HomeContainer = () => {
           <Item
             title="Assisted Video Learning"
             route="/you-learn"
+            icon="/key.png"
+            width={50}
+          />
+          <Item
+            title="Webgl Immersive Experiences"
+            route="/webgl-immersive"
             icon="/key.png"
             width={50}
           />
